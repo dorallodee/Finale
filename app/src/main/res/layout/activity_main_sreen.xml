@@ -4,17 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainSreen">
+    android:background="@color/bg"
+    tools:context=".MainScreen">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="379dp"
-        android:layout_height="175dp"
-        android:gravity="center"
-        android:text="Вот второе окно, здесь будет что-то типа главного меню"
-        android:textSize="34sp"
+    <Button
+        android:id="@+id/buttonSupport"
+        android:layout_width="135dp"
+        android:layout_height="66dp"
+        android:text="@string/support"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonFunc"
+        android:layout_width="135dp"
+        android:layout_height="66dp"
+        android:text="@string/functions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonHistory"
+        android:layout_width="135dp"
+        android:layout_height="66dp"
+        android:text="@string/history"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/securityText"
+        android:layout_width="387dp"
+        android:layout_height="46dp"
+        android:text="@string/security"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.859" />
+
+    <TextView
+        android:id="@+id/loansText"
+        android:layout_width="387dp"
+        android:layout_height="46dp"
+        android:text="@string/loans"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.759" />
+
+    <TextView
+        android:id="@+id/depositsAndInvestmentsText"
+        android:layout_width="387dp"
+        android:layout_height="46dp"
+        android:text="@string/depositsAndInvestments"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

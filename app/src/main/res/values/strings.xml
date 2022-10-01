@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Finale</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="enter">Войти</string>
+    <string name="functions">Функции</string>
+    <string name="support">Поддержка</string>
+    <string name="history">История</string>
+    <string name="depositsAndInvestments">Вклады и инвестиции</string>
+    <string name="security">Безопасность</string>
+    <string name="loans">Кредиты</string>
 </resources>

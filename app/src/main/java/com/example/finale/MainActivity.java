@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(login.getText().toString().trim().equals("DashaLohushka") && password.getText().toString().trim().equals("SashaTozhe")) {
                     Toast.makeText(MainActivity.this, "Вы вошли в свой профиль", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(MainActivity.this, MainSreen.class);
+                    Intent intent = new Intent(MainActivity.this, MainScreen.class);
                     startActivity(intent);
                 }
                 else if(login.getText().toString().trim().equals("")){
