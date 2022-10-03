@@ -18,6 +18,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -40,7 +42,8 @@ public class MainScreen extends AppCompatActivity {
         currency1 = findViewById(R.id.currency1);
         currency2 = findViewById(R.id.currency2);
 
-        String URL = "https://currate.ru/api/?get=rates&pairs=USDRUB,EURRUB&key=a13a7960473c386a7658bb47d0723489";
+        String URL = "https://cdn.cur.su/api/cbr.json";
+        //String URL = "https://currate.ru/api/?get=rates&pairs=USDRUB,EURRUB&key=a13a7960473c386a7658bb47d0723489";
         new getURL().execute(URL);
 
         btnFunc.setOnClickListener(new View.OnClickListener() {
@@ -149,8 +152,9 @@ public class MainScreen extends AppCompatActivity {
 
             try {
                 JSONObject obj = new JSONObject(result);
-                currency1.setText("USD - RUB: 1 USD = " + obj.getJSONObject("data").getDouble("USDRUB") + " RUB");
-                currency2.setText("EUR - RUB: 1 EUR = " + obj.getJSONObject("data").getDouble("EURRUB") + " RUB");
+                currency1.setText("USD - RUB: 1 USD = " + obj.getJSONObject("rates").getDouble("RUB") + " RUB");
+                currency2.setText("EUR - RUB: 1 EUR = " + BigDecimal.valueOf(obj.getJSONObject("rates").getDouble("RUB") / obj.getJSONObject("rates").getDouble("EUR")).setScale(4, RoundingMode.HALF_UP).doubleValue() + " RUB");
+                //currency1.setText("USD - RUB: 1 USD = " + obj.getJSONObject("data").getDouble("USDRUB") + " RUB");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
