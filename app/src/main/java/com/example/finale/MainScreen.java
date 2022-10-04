@@ -43,7 +43,6 @@ public class MainScreen extends AppCompatActivity {
         currency2 = findViewById(R.id.currency2);
 
         String URL = "https://cdn.cur.su/api/cbr.json";
-        //String URL = "https://currate.ru/api/?get=rates&pairs=USDRUB,EURRUB&key=a13a7960473c386a7658bb47d0723489";
         new getURL().execute(URL);
 
         btnFunc.setOnClickListener(new View.OnClickListener() {
@@ -99,8 +98,6 @@ public class MainScreen extends AppCompatActivity {
 
         protected void onPreExecute(){
             super.onPreExecute();
-            currency1.setText("Maybe You have no internet connection");
-            currency2.setText("Maybe You have no internet connection");
         }
 
         @Override
@@ -146,15 +143,14 @@ public class MainScreen extends AppCompatActivity {
             return "";
         }
 
-        @SuppressLint("SetTextI18n")
+         @SuppressLint("SetTextI18n")
         protected void onPostExecute(String result){
             super.onPostExecute(result);
 
             try {
                 JSONObject obj = new JSONObject(result);
-                currency1.setText("USD - RUB: 1 USD = " + obj.getJSONObject("rates").getDouble("RUB") + " RUB");
-                currency2.setText("EUR - RUB: 1 EUR = " + BigDecimal.valueOf(obj.getJSONObject("rates").getDouble("RUB") / obj.getJSONObject("rates").getDouble("EUR")).setScale(4, RoundingMode.HALF_UP).doubleValue() + " RUB");
-                //currency1.setText("USD - RUB: 1 USD = " + obj.getJSONObject("data").getDouble("USDRUB") + " RUB");
+                currency1.setText("1 USD = " + obj.getJSONObject("rates").getDouble("RUB") + " RUB");
+                currency2.setText("1 EUR = " + BigDecimal.valueOf(obj.getJSONObject("rates").getDouble("RUB") / obj.getJSONObject("rates").getDouble("EUR")).setScale(4, RoundingMode.HALF_UP).doubleValue() + " RUB");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
