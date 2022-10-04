@@ -4,11 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_currency.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_deposits_and_investments.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_deposits_and_investments.xml" value="0.3291778564453125" />
         <entry key="app/src/main/res/layout/activity_functions.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_history.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_loans.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33421325683593744" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2171737670898437" />
         <entry key="app/src/main/res/layout/activity_main_sreen.xml" value="0.2942708333333333" />
       </map>
     </option>
