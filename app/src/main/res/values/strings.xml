@@ -9,8 +9,12 @@
     <string name="depositsAndInvestments">Вклады и инвестиции</string>
     <string name="security">Безопасность</string>
     <string name="loans">Кредиты</string>
-    <string name="connecting">Connecting...</string>
+    <string name="connecting">Connecting…</string>
     <string name="USD">USD - RUB</string>
     <string name="EUR">EUR - RUB</string>
+    <string name="dollar_euro" />
+    <string name="dollar" />
+    <string name="euro" />
+    <string name="cards" />
     <string name="portfel">Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями </string>
 </resources>
