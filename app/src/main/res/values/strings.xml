@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Finale</string>
-    <string name="login">Login</string>
-    <string name="password">Password</string>
+    <string name="login">Enter your login</string>
+    <string name="password">Enter your password</string>
     <string name="enter">Войти</string>
     <string name="functions">Функции</string>
     <string name="support">Поддержка</string>
@@ -17,4 +17,7 @@
     <string name="euro" />
     <string name="cards" />
     <string name="portfel">Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями </string>
+    <string name="good_day">Добрый день,\nГригорий Павлович</string>
+    <string name="Login">Login</string>
+    <string name="Password">Password</string>
 </resources>
