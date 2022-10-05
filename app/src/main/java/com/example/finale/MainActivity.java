@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     but1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(login.getText().toString().trim().equals("DashaLohushka") && password.getText().toString().trim().equals("SashaTozhe")) {
+                if(login.getText().toString().trim().equals("login") && password.getText().toString().trim().equals("password")) {
                     Toast.makeText(MainActivity.this, "Вы вошли в свой профиль", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(MainActivity.this, MainScreen.class);
                     startActivity(intent);
