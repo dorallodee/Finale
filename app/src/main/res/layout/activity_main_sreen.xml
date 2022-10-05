@@ -5,82 +5,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
-    tools:context=".MainScreen">
+    android:background="@drawable/background"
+    tools:context=".MainScreen"
+    tools:layout_editor_absoluteX="89dp"
+    tools:layout_editor_absoluteY="-2dp">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="390dp"
+        android:layout_height="132dp"
+        app:srcCompat="@drawable/dollar_euro"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <TextView
+        android:id="@+id/USD2"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="@string/EUR"
+        android:textSize="18sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.649" />
+
+    <TextView
+        android:id="@+id/currency2"
+        android:layout_width="220dp"
+        android:layout_height="25dp"
+        android:hint="@string/connecting"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.644" />
+
+    <TextView
+        android:id="@+id/currency4"
+        android:layout_width="400dp"
+        android:layout_height="2dp"
+        android:background="#FF4C4C4C"
+        android:backgroundTint="#FF4C4C4C"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.609" />
+
+    <TextView
+        android:id="@+id/USD"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="@string/USD"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.573" />
+
+    <TextView
+        android:id="@+id/currency1"
+        android:layout_width="220dp"
+        android:layout_height="25dp"
+        android:hint="@string/connecting"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.577" />
 
     <Button
         android:id="@+id/buttonSupport"
-        android:layout_width="135dp"
-        android:layout_height="66dp"
+        android:layout_width="126dp"
+        android:layout_height="61dp"
+        android:background="@drawable/low_button"
         android:text="@string/support"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.992" />
 
     <Button
         android:id="@+id/buttonFunc"
-        android:layout_width="135dp"
-        android:layout_height="66dp"
+        android:layout_width="126dp"
+        android:layout_height="60dp"
+        android:background="@drawable/low_button"
         android:text="@string/functions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.991" />
 
     <Button
         android:id="@+id/buttonHistory"
-        android:layout_width="135dp"
-        android:layout_height="66dp"
+        android:layout_width="131dp"
+        android:layout_height="60dp"
+        android:background="@drawable/low_button"
         android:text="@string/history"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.992" />
 
-    <TextView
-        android:id="@+id/USD"
-        android:layout_width="186dp"
-        android:layout_height="58dp"
-        android:text="@string/USD"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501" />
-
-    <TextView
-        android:id="@+id/USD2"
-        android:layout_width="186dp"
-        android:layout_height="58dp"
-        android:text="@string/EUR"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643" />
-
-    <TextView
-        android:id="@+id/currency1"
-        android:layout_width="387dp"
-        android:layout_height="40dp"
-        android:hint="@string/connecting"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529" />
 
     <TextView
         android:id="@+id/currency3"
@@ -94,21 +137,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintVertical_bias="0.287" />
 
-    <TextView
-        android:id="@+id/currency4"
-        android:layout_width="400dp"
-        android:layout_height="2dp"
-        android:background="#FF4C4C4C"
-        android:backgroundTint="#FF4C4C4C"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.715" />
 
     <TextView
         android:id="@+id/currency"
@@ -120,58 +150,87 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.398" />
 
-    <TextView
-        android:id="@+id/currency2"
-        android:layout_width="387dp"
-        android:layout_height="40dp"
-        android:hint="@string/connecting"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
-
-    <TextView
+    <Button
         android:id="@+id/depositsAndInvestmentsText"
         android:layout_width="387dp"
         android:layout_height="46dp"
+        android:background="@drawable/button"
         android:text="@string/depositsAndInvestments"
+        android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788" />
+        app:layout_constraintTop_toBottomOf="@+id/securityText"
+        app:layout_constraintVertical_bias="0.468" />
 
-    <TextView
+    <Button
         android:id="@+id/loansText"
         android:layout_width="387dp"
         android:layout_height="46dp"
+        android:background="@drawable/button"
         android:text="@string/loans"
+        android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.891" />
+        app:layout_constraintVertical_bias="0.78" />
 
-    <TextView
+    <Button
         android:id="@+id/securityText"
         android:layout_width="387dp"
         android:layout_height="46dp"
+        android:background="@drawable/button"
         android:text="@string/security"
+        android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSupport"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.991" />
+        app:layout_constraintVertical_bias="0.875" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="-66dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="-19dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/dollar"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/euro"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="422dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="390dp"
+        android:layout_height="230dp"
+        app:srcCompat="@drawable/cards"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="108dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

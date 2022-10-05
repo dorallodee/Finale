@@ -3,13 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_currency.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_deposits_and_investments.xml" value="0.3291778564453125" />
-        <entry key="app/src/main/res/layout/activity_functions.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/activity_history.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/activity_loans.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2171737670898437" />
-        <entry key="app/src/main/res/layout/activity_main_sreen.xml" value="0.2942708333333333" />
+        <entry key="..\:/Users/Darya/AndroidStudioProjects/Finale/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2555" />
+        <entry key="..\:/Users/Darya/AndroidStudioProjects/Finale/app/src/main/res/drawable/background.xml" value="0.2545" />
+        <entry key="..\:/Users/Darya/AndroidStudioProjects/Finale/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Darya/AndroidStudioProjects/Finale/app/src/main/res/layout/activity_currency.xml" value="0.1" />
+        <entry key="..\:/Users/Darya/AndroidStudioProjects/Finale/app/src/main/res/layout/activity_deposits_and_investments.xml" value="0.234375" />
+        <entry key="..\:/Users/Darya/AndroidStudioProjects/Finale/app/src/main/res/layout/activity_functions.xml" value="0.234375" />
+        <entry key="..\:/Users/Darya/AndroidStudioProjects/Finale/app/src/main/res/layout/activity_main_sreen.xml" value="0.264" />
+        <entry key="..\:/Users/Darya/AndroidStudioProjects/Finale/app/src/main/res/layout/activity_support.xml" value="0.11944444444444445" />
       </map>
     </option>
   </component>
