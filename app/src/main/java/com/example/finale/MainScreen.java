@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +27,8 @@ import java.net.URL;
 
 public class MainScreen extends AppCompatActivity {
     Button btnFunc, btnSupport, btnHistory;
-    TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2;
+    TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2, usd, eur;
+    ImageView dollar, euro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,11 @@ public class MainScreen extends AppCompatActivity {
         txtSecurity = findViewById(R.id.securityText);
         currency1 = findViewById(R.id.currency1);
         currency2 = findViewById(R.id.currency2);
+        usd = findViewById(R.id.USD);
+        eur = findViewById(R.id.EUR);
+
+        dollar = findViewById(R.id.Dollar);
+        euro = findViewById(R.id.Euro);
 
         String URL = "https://cdn.cur.su/api/cbr.json";
         new getURL().execute(URL);
@@ -89,6 +96,54 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainScreen.this, Security.class);
+                startActivity(intent);
+            }
+        });
+
+        currency1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Currency.class);
+                startActivity(intent);
+            }
+        });
+
+        currency2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Currency.class);
+                startActivity(intent);
+            }
+        });
+
+        usd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Currency.class);
+                startActivity(intent);
+            }
+        });
+
+        eur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Currency.class);
+                startActivity(intent);
+            }
+        });
+
+        dollar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Currency.class);
+                startActivity(intent);
+            }
+        });
+
+        euro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Currency.class);
                 startActivity(intent);
             }
         });
