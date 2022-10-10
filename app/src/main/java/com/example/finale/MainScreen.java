@@ -41,8 +41,10 @@ public class MainScreen extends AppCompatActivity {
         txtDeposits = findViewById(R.id.depositsAndInvestmentsText);
         txtLoans = findViewById(R.id.loansText);
         txtSecurity = findViewById(R.id.securityText);
+
         currency1 = findViewById(R.id.currency1);
         currency2 = findViewById(R.id.currency2);
+
         usd = findViewById(R.id.USD);
         eur = findViewById(R.id.EUR);
 

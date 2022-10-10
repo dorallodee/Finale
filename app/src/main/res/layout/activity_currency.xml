@@ -3,9 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
-    android:background="@drawable/page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Currency">
+
+    <TextView
+        android:id="@+id/tvCurrency1"
+        android:layout_width="191dp"
+        android:layout_height="42dp"
+        android:backgroundTint="#FFFFFF"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.355" />
+
+    <Spinner
+        android:id="@+id/spinner11"
+        android:layout_width="150dp"
+        android:layout_height="42dp"
+
+        android:entries="@array/currency"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326" />
+
+    <Spinner
+        android:id="@+id/spinner12"
+        android:layout_width="150dp"
+        android:layout_height="42dp"
+
+        android:entries="@array/currency"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

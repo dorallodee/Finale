@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Finale</string>
-    <string name="login">Enter your login</string>
-    <string name="password">Enter your password</string>
     <string name="enter">Войти</string>
     <string name="functions">Функции</string>
     <string name="support">Поддержка</string>
@@ -18,6 +16,43 @@
     <string name="cards" />
     <string name="portfel">Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями Портфель с акциями </string>
     <string name="good_day">Добрый день,\nГригорий Павлович</string>
-    <string name="Login">Login</string>
-    <string name="Password">Password</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string-array name="currency">
+        <item>AUD</item>
+        <item>AZN</item>
+        <item>AMD</item>
+        <item>BYN</item>
+        <item>BGN</item>
+        <item>BRL</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>CNY</item>
+        <item>CZK</item>
+        <item>DKK</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>HUF</item>
+        <item>HKD</item>
+        <item>INR</item>
+        <item>JPY</item>
+        <item>KGS</item>
+        <item>KRW</item>
+        <item>KZT</item>
+        <item>MDL</item>
+        <item>NOK</item>
+        <item>PLN</item>
+        <item>RON</item>
+        <item>RUB</item>
+        <item>XDR</item>
+        <item>SEK</item>
+        <item>SGD</item>
+        <item>TJS</item>
+        <item>TRY</item>
+        <item>TMT</item>
+        <item>UAH</item>
+        <item>USD</item>
+        <item>UZS</item>
+        <item>ZAR</item>
+    </string-array>
 </resources>
