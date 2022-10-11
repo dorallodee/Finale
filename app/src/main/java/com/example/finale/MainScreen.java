@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +26,8 @@ import java.net.URL;
 
 public class MainScreen extends AppCompatActivity {
     Button btnFunc, btnSupport, btnHistory;
-    TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2, usd, eur;
+    TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2, usd, eur, tvWeather;
+    ImageView ivWeather;
     ImageView dollar, euro;
 
     @Override
@@ -41,6 +41,8 @@ public class MainScreen extends AppCompatActivity {
         txtDeposits = findViewById(R.id.depositsAndInvestmentsText);
         txtLoans = findViewById(R.id.loansText);
         txtSecurity = findViewById(R.id.securityText);
+        tvWeather = findViewById(R.id.tvWeather);
+        ivWeather = findViewById(R.id.ivWeather);
 
         currency1 = findViewById(R.id.currency1);
         currency2 = findViewById(R.id.currency2);
@@ -51,8 +53,12 @@ public class MainScreen extends AppCompatActivity {
         dollar = findViewById(R.id.Dollar);
         euro = findViewById(R.id.Euro);
 
-        String URL = "https://cdn.cur.su/api/cbr.json";
-        new getURL().execute(URL);
+        String URLCurrency = "https://cdn.cur.su/api/cbr.json";
+        new getURLForCurrency().execute(URLCurrency);
+
+        String key = "771f71c52bc5003a745ac9074cdb920f";
+        String URLWeather = "https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=" + key + "&units=metric";
+        new getURLForWeather().execute(URLWeather);
 
         btnFunc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,9 +155,17 @@ public class MainScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ivWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Weather.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    private class getURL extends AsyncTask<String, String, String>{
+    private class getURLForCurrency extends AsyncTask<String, String, String>{
 
         protected void onPreExecute(){
             super.onPreExecute();
@@ -196,10 +210,8 @@ public class MainScreen extends AppCompatActivity {
                     }
                 }
             }
-
             return "";
         }
-
          @SuppressLint("SetTextI18n")
         protected void onPostExecute(String result){
             super.onPostExecute(result);
@@ -211,8 +223,66 @@ public class MainScreen extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+        }
+    }
 
+    private class getURLForWeather extends AsyncTask<String, String, String> {
 
+        protected void onPreExecute(){
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            HttpURLConnection connection = null;
+            BufferedReader reader = null;
+
+            try {
+                URL URL = new URL(strings[0]);
+                connection = (HttpURLConnection) URL.openConnection();
+                connection.connect();
+
+                InputStream stream = connection.getInputStream();
+                reader = new BufferedReader(new InputStreamReader(stream));
+
+                StringBuffer buffer = new StringBuffer();
+                String line = "";
+
+                while((line = reader.readLine()) != null){
+                    buffer.append(line).append("\n");
+
+                    return  buffer.toString();
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if(connection != null){
+                    connection.disconnect();
+
+                    try {
+                        if(reader != null){
+                            reader.close();
+                        }
+                    }
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return "";
+        }
+
+        @SuppressLint("SetTextI18n")
+        protected void onPostExecute(String result){
+            super.onPostExecute(result);
+            try {
+                JSONObject obj = new JSONObject(result);
+                tvWeather.setText(((int)obj.getJSONObject("main").getDouble("temp") + "°"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

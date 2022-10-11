@@ -216,11 +216,13 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
                             tv2.setText("1 " + spinner21.getSelectedItem().toString() + " = " +  BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + " " + spinner22.getSelectedItem().toString());
                             break;
                         }
-                        /*Pattern pattern = Pattern.compile("[^0-9]");
+                        /*
+                        Pattern pattern = Pattern.compile("[^0-9]");
                         Matcher matcher = pattern.matcher(ed1.getText().toString().trim());
                         boolean isBad = matcher.find();
                         if (isBad)
-                            break;*/
+                            break;
+                        */
                         tv2.setText(ed1.getText().toString().trim() + " " + spinner21.getSelectedItem().toString() + " = " +  BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + " " + spinner22.getSelectedItem().toString());
                     }
                 }

@@ -19,6 +19,11 @@
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="value">Введите число</string>
+    <string name="logoWeather">Погода для Вас</string>
+    <string name="hint_cityWeather">Введите название города</string>
+    <string name="searchWeather">Найти</string>
+    <string name="enterWeather">Вы не ввели название города</string>
+    <string name="errWeather">Ошибка.</string>
     <string-array name="currency">
         <item>AUD</item>
         <item>AZN</item>

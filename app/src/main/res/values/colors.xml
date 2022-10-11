@@ -10,4 +10,7 @@
     <color name="enter">#FF00BCD4</color>
     <color name="tint">#757575</color>
     <color name="bg">#ECECEC</color>
+    <color name="textColorForWeather">#fff</color>
+    <color name="hintColorForWeather">#c4c4c4</color>
+    <color name="colorPrimary">#333</color>
 </resources>

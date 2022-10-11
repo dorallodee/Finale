@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="@string/logoWeather"
+        android:textAlignment="center"
+        android:textColor="@color/textColorForWeather"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/user_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginHorizontal="50sp"
+        android:layout_marginTop="100sp"
+        android:backgroundTint="@color/teal_700"
+        android:ems="10"
+        android:hint="@string/hint_cityWeather"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/textColorForWeather"
+        android:textColorHint="@color/hintColorForWeather" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="125sp"
+        android:layout_below="@id/user_field"
+        android:layout_marginTop="25sp"
+        android:backgroundTint="@color/teal_200"
+        android:text="@string/searchWeather" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="50sp"
+        android:textAlignment="center"
+        android:textColor="@color/hintColorForWeather"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

@@ -298,7 +298,7 @@
         app:layout_constraintVertical_bias="0.057" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageView9"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -309,8 +309,23 @@
         app:layout_constraintVertical_bias="0.144"
         app:srcCompat="@drawable/mini_icon" />
 
+    <TextView
+        android:id="@+id/tvWeather"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.203" />
+
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/ivWeather"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
