@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,13 +27,15 @@ import java.math.RoundingMode;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Currency extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    int bufTv;
-
-    Spinner spinner11, spinner12;
-    TextView tv1;
+    Spinner spinner11, spinner12, spinner21, spinner22;
+    TextView tv1, tv2;
+    int tvBuf;
+    EditText ed1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +53,12 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner11.setAdapter(adapter);
+        spinner12.setAdapter(adapter);
+
         spinner11.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(Currency.this, spinner11.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                tvBuf = 1;
                 new Currency.getURL().execute(URL);
             }
 
@@ -61,11 +68,64 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
             }
         });
 
-        spinner12.setAdapter(adapter);
         spinner12.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(Currency.this, spinner12.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                tvBuf = 1;
+                new Currency.getURL().execute(URL);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        ed1 = findViewById(R.id.value1);
+
+        spinner21 = findViewById(R.id.spinner21);
+        spinner22 = findViewById(R.id.spinner22);
+
+        spinner21.setAdapter(adapter);
+        spinner22.setAdapter(adapter);
+
+        tv2 = findViewById(R.id.tvCurrency2);
+
+        ed1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                tvBuf = 2;
+                new Currency.getURL().execute(URL);
+            }
+        });
+
+        spinner21.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                tvBuf = 2;
+                new Currency.getURL().execute(URL);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinner22.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                tvBuf = 2;
                 new Currency.getURL().execute(URL);
             }
 
@@ -75,6 +135,8 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
             }
         });
     }
+
+
 
         @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -142,7 +204,26 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
 
             try {
                 JSONObject obj = new JSONObject(result);
-                    tv1.setText("1 " + spinner11.getSelectedItem().toString() + " = " + BigDecimal.valueOf( obj.getJSONObject("rates").getDouble(spinner12.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner11.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + spinner12.getSelectedItem().toString());
+                switch (tvBuf){
+                    case 1:
+                    {
+                        tv1.setText("1 " + spinner11.getSelectedItem().toString() + " = " + BigDecimal.valueOf( obj.getJSONObject("rates").getDouble(spinner12.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner11.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + spinner12.getSelectedItem().toString());
+                        break;
+                    }
+                    case 2:
+                    {
+                        if(ed1.getText().toString().trim().isEmpty()){
+                            tv2.setText("1 " + spinner21.getSelectedItem().toString() + " = " +  BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + " " + spinner22.getSelectedItem().toString());
+                            break;
+                        }
+                        /*Pattern pattern = Pattern.compile("[^0-9]");
+                        Matcher matcher = pattern.matcher(ed1.getText().toString().trim());
+                        boolean isBad = matcher.find();
+                        if (isBad)
+                            break;*/
+                        tv2.setText(ed1.getText().toString().trim() + " " + spinner21.getSelectedItem().toString() + " = " +  BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + " " + spinner22.getSelectedItem().toString());
+                    }
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }

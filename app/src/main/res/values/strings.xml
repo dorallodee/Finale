@@ -18,6 +18,7 @@
     <string name="good_day">Добрый день,\nГригорий Павлович</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
+    <string name="value">Введите число</string>
     <string-array name="currency">
         <item>AUD</item>
         <item>AZN</item>

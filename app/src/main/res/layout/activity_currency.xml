@@ -7,6 +7,46 @@
     android:layout_height="match_parent"
     tools:context=".Currency">
 
+    <Spinner
+        android:id="@+id/spinner21"
+        android:layout_width="150dp"
+        android:layout_height="42dp"
+
+        android:entries="@array/currency"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.537" />
+
+    <Spinner
+        android:id="@+id/spinner22"
+        android:layout_width="150dp"
+        android:layout_height="42dp"
+
+        android:entries="@array/currency"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.586" />
+
+    <TextView
+        android:id="@+id/tvCurrency2"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:backgroundTint="#FFFFFF"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659" />
+
     <TextView
         android:id="@+id/tvCurrency1"
         android:layout_width="191dp"
@@ -19,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <Spinner
         android:id="@+id/spinner11"
@@ -46,6 +86,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.375" />
+
+    <EditText
+        android:id="@+id/value1"
+        android:layout_width="190dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="@string/value"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.537" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

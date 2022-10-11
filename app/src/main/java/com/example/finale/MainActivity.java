@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Введите пароль", Toast.LENGTH_LONG).show();
                 } else if (login.getText().toString().trim().equals("") && password.getText().toString().trim().equals("")) {
                     Toast.makeText(MainActivity.this, "Введите логин и пароль", Toast.LENGTH_LONG).show();
-                } else if (!login.getText().toString().trim().equals("DashaLohushka") || !password.getText().toString().trim().equals("SashaTozhe")) {
+                } else if (!login.getText().toString().trim().equals("login") || !password.getText().toString().trim().equals("password")) {
                     Toast.makeText(MainActivity.this, "Данные не найдены", Toast.LENGTH_LONG).show();
                 }
             }
