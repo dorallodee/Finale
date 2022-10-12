@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,7 +28,7 @@ import java.net.URL;
 public class MainScreen extends AppCompatActivity {
     Button btnFunc, btnSupport, btnHistory;
     TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2, usd, eur, tvWeather;
-    ImageView ivWeather;
+    ImageView ivWeather, miniHist;
     ImageView dollar, euro;
 
     @Override
@@ -43,6 +44,7 @@ public class MainScreen extends AppCompatActivity {
         txtSecurity = findViewById(R.id.securityText);
         tvWeather = findViewById(R.id.tvWeather);
         ivWeather = findViewById(R.id.ivWeather);
+        miniHist = findViewById(R.id.miniHistory);
 
         currency1 = findViewById(R.id.currency1);
         currency2 = findViewById(R.id.currency2);
@@ -163,6 +165,22 @@ public class MainScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        miniHist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainScreen.this, MiniHistories.class);
+                startActivity(intent);
+            }
+        });
+        /*new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(MainActivity.this, Home.class);
+                startActivity(i);
+                finish();
+            }
+        }, 5*1000);*/
     }
 
     private class getURLForCurrency extends AsyncTask<String, String, String>{

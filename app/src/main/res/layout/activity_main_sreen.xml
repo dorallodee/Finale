@@ -256,7 +256,7 @@
         app:layout_constraintGuide_begin="-36dp" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/miniHistory"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:contentDescription="news"
