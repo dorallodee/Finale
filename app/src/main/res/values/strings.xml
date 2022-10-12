@@ -35,6 +35,8 @@
     <string name="_3">3</string>
     <string name="_2">2</string>
     <string name="_1">1</string>
+    <string name="fornews">Данный проект создавался не только с целью получить навыки в программировании на языке Java, но и чтобы усовершенствовать уже существующие банковские сервисы. Некоторые страницы пока находятся в разработке, но в скором времени проект будет готов, а пока предлагаем Вам воспользоваться уже имеющимся функционалом и вкладками :)</string>
+    <string name="textandgarry">textAndGarry</string>
     <string-array name="currency">
         <item>AUD</item>
         <item>AZN</item>
