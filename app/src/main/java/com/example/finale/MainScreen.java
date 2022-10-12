@@ -29,7 +29,7 @@ public class MainScreen extends AppCompatActivity {
     Button btnFunc, btnSupport, btnHistory;
     TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2, usd, eur, tvWeather;
     ImageView ivWeather, miniHist;
-    ImageView dollar, euro;
+    ImageView dollar, euro, ivCurrency;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +49,12 @@ public class MainScreen extends AppCompatActivity {
         currency1 = findViewById(R.id.currency1);
         currency2 = findViewById(R.id.currency2);
 
-        usd = findViewById(R.id.USD);
+        ivCurrency = findViewById(R.id.Currency);
+        /*usd = findViewById(R.id.USD);
         eur = findViewById(R.id.EUR);
 
         dollar = findViewById(R.id.Dollar);
-        euro = findViewById(R.id.Euro);
+        euro = findViewById(R.id.Euro);*/
 
         String URLCurrency = "https://cdn.cur.su/api/cbr.json";
         new getURLForCurrency().execute(URLCurrency);
@@ -126,7 +127,15 @@ public class MainScreen extends AppCompatActivity {
             }
         });
 
-        usd.setOnClickListener(new View.OnClickListener() {
+        ivCurrency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Currency.class);
+                startActivity(intent);
+            }
+        });
+
+        /*usd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainScreen.this, Currency.class);
@@ -156,7 +165,7 @@ public class MainScreen extends AppCompatActivity {
                 Intent intent = new Intent(MainScreen.this, Currency.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         ivWeather.setOnClickListener(new View.OnClickListener() {
             @Override
