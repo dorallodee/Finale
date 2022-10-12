@@ -7,10 +7,23 @@
     android:orientation="vertical"
     tools:context=".MiniHistories">
 
-    <ImageView
-        android:id="@+id/garry"
+    <TextView
+        android:id="@+id/textinnews"
         android:layout_width="wrap_content"
-        android:layout_height="731dp"
-        android:layout_gravity="center"
-        android:src="@drawable/garry" />
+        android:layout_height="match_parent"
+        android:background="#f0a3f8"
+        android:fontFamily="sans-serif-medium"
+        android:text="Данный проект создавался не только с целью получить навыки в программировании на языке Java, но и чтобы усовершенствовать уже существующие банковские сервисы. Некоторые страницы пока находятся в разработке, но в скором времени проект будет готов, а пока предлагаем Вам воспользоваться уже имеющимся функционалом и вкладками :)"
+        android:textAlignment="center"
+
+        android:textColor="@color/purple_700"
+        android:textSize="30sp"
+        tools:ignore="InvalidId" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550sp"
+        app:srcCompat="@drawable/garry" />
 </FrameLayout>
