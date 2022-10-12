@@ -173,14 +173,6 @@ public class MainScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        /*new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(MainActivity.this, Home.class);
-                startActivity(i);
-                finish();
-            }
-        }, 5*1000);*/
     }
 
     private class getURLForCurrency extends AsyncTask<String, String, String>{
