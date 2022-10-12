@@ -108,6 +108,7 @@ public class Weather extends AppCompatActivity {
                 resultInfo.setText("Температура: " + obj.getJSONObject("main").getDouble("temp") + "°C" +
                 "\nОщущается как: " + obj.getJSONObject("main").getDouble("feels_like") + "°C" +
                 "\nВлажность: " + obj.getJSONObject("main").getDouble("humidity") + "%");
+                Toast.makeText(Weather.this, "Weather!!!", Toast.LENGTH_SHORT).show();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
