@@ -218,8 +218,8 @@ public class MainScreen extends AppCompatActivity {
 
             try {
                 JSONObject obj = new JSONObject(result);
-                currency1.setText("1 USD = " + obj.getJSONObject("rates").getDouble("RUB") + " RUB");
-                currency2.setText("1 EUR = " + BigDecimal.valueOf(obj.getJSONObject("rates").getDouble("RUB") / obj.getJSONObject("rates").getDouble("EUR")).setScale(4, RoundingMode.HALF_UP).doubleValue() + " RUB");
+                currency1.setText("1 USD = " + BigDecimal.valueOf(obj.getJSONObject("rates").getDouble("RUB")).setScale(2, RoundingMode.HALF_UP) + " RUB");
+                currency2.setText("1 EUR = " + BigDecimal.valueOf(obj.getJSONObject("rates").getDouble("RUB") / obj.getJSONObject("rates").getDouble("EUR")).setScale(2, RoundingMode.HALF_UP).doubleValue() + " RUB");
             } catch (JSONException e) {
                 e.printStackTrace();
             }

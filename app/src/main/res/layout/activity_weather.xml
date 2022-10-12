@@ -12,12 +12,24 @@
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50sp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/abril_fatface"
         android:text="@string/logoWeather"
         android:textAlignment="center"
         android:textColor="@color/textColorForWeather"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="-197dp"
+        android:textAlignment="center"
+        android:textColor="@color/hintColorForWeather"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/user_field"
@@ -25,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
         android:layout_marginHorizontal="50sp"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/teal_700"
         android:ems="10"
         android:hint="@string/hint_cityWeather"
@@ -38,22 +50,29 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="125sp"
         android:layout_below="@id/user_field"
-        android:layout_marginTop="25sp"
+        android:layout_marginHorizontal="125sp"
+        android:layout_marginTop="695dp"
         android:backgroundTint="@color/teal_200"
         android:text="@string/searchWeather" />
 
     <TextView
-        android:id="@+id/result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button"
-        android:layout_marginHorizontal="20sp"
-        android:layout_marginTop="50sp"
-        android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
-        android:textSize="20sp" />
+        android:id="@+id/tvTemp"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="50sp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="171dp"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="598dp"
+        android:text="12°"
+        android:textColor="@color/white"
+
+        android:textSize="75dp" />
 
 
 </RelativeLayout>

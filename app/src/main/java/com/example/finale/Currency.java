@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -31,55 +32,22 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Currency extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+    int tvBuf;
+    String buf;
     Spinner spinner11, spinner12, spinner21, spinner22;
     TextView tv1, tv2;
-    int tvBuf;
     EditText ed1;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnDot, btnDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
 
-        spinner11 = findViewById(R.id.spinner11);
-        spinner12 = findViewById(R.id.spinner12);
-
-        tv1 = findViewById(R.id.tvCurrency1);
-
         String URL = "https://cdn.cur.su/api/cbr.json";
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.currency,  android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinner11.setAdapter(adapter);
-        spinner12.setAdapter(adapter);
-
-        spinner11.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                tvBuf = 1;
-                new Currency.getURL().execute(URL);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        spinner12.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                tvBuf = 1;
-                new Currency.getURL().execute(URL);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
         ed1 = findViewById(R.id.value1);
 
@@ -90,6 +58,19 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
         spinner22.setAdapter(adapter);
 
         tv2 = findViewById(R.id.tvCurrency2);
+
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
+        btn4 = findViewById(R.id.btn4);
+        btn5 = findViewById(R.id.btn5);
+        btn6 = findViewById(R.id.btn6);
+        btn7 = findViewById(R.id.btn7);
+        btn8 = findViewById(R.id.btn8);
+        btn9 = findViewById(R.id.btn9);
+        btn0 = findViewById(R.id.btn0);
+        btnDot = findViewById(R.id.btnDot);
+        btnDelete = findViewById(R.id.btnBackspace);
 
         ed1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -134,14 +115,123 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
 
             }
         });
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "1";
+                ed1.setText(buf);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "2";
+                ed1.setText(buf);
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "3";
+                ed1.setText(buf);
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "4";
+                ed1.setText(buf);
+            }
+        });
+
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "5";
+                ed1.setText(buf);
+            }
+        });
+
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "6";
+                ed1.setText(buf);
+            }
+        });
+
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "7";
+                ed1.setText(buf);
+            }
+        });
+
+        btn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "8";
+                ed1.setText(buf);
+            }
+        });
+
+        btn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "9";
+                ed1.setText(buf);
+            }
+        });
+
+        btn0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                buf += "0";
+                ed1.setText(buf);
+            }
+        });
+
+        btnDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                if(buf.contains("."))
+                    return;
+                buf += ".";
+                ed1.setText(buf);
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buf = ed1.getText().toString();
+                if(!buf.isEmpty())
+                    ed1.setText(buf.substring(0, buf.length() - 1));
+                else
+                    return;
+            }
+        });
     }
 
-
-
-        @Override
+    @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String cur = parent.getItemAtPosition(position).toString();
-
     }
 
     @Override
@@ -212,6 +302,8 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
                     }
                     case 2:
                     {
+                        if(!ed1.getText().toString().trim().isEmpty() && ed1.getText().toString().trim().toCharArray()[ed1.getText().toString().trim().length() - 1] == '.')
+                            break;
                         if(ed1.getText().toString().trim().isEmpty()){
                             tv2.setText("1 " + spinner21.getSelectedItem().toString() + " = " +  BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + " " + spinner22.getSelectedItem().toString());
                             break;
