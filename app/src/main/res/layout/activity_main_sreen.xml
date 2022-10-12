@@ -12,8 +12,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="355dp"
-        android:layout_height="126dp"
+        android:layout_width="284dp"
+        android:layout_height="85dp"
         android:contentDescription="@string/dollar_euro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,94 +23,39 @@
         app:srcCompat="@drawable/dollar_euro"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/Dollar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:contentDescription="@string/dollar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.607"
-        app:srcCompat="@drawable/dollar" />
-
-    <TextView
-        android:id="@+id/EUR"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:gravity="bottom"
-        android:text="@string/EUR"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.266"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
-
     <TextView
         android:id="@+id/currency1"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
         android:gravity="bottom"
         android:hint="@string/connecting"
-        android:textSize="20dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.607" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <TextView
         android:id="@+id/currency2"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
         android:gravity="bottom"
         android:hint="@string/connecting"
-        android:textSize="20dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
-
-    <TextView
-        android:id="@+id/USD"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:gravity="bottom"
-        android:text="@string/USD"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.266"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.607" />
-
-    <ImageView
-        android:id="@+id/Euro"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:contentDescription="@string/euro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662"
-        app:srcCompat="@drawable/euro" />
+        app:layout_constraintVertical_bias="0.666" />
 
     <Button
         android:id="@+id/securityText"
-        android:layout_width="340dp"
+        android:layout_width="284dp"
         android:layout_height="40dp"
-        android:background="@drawable/button"
-        android:text="@string/security"
+        android:background="@drawable/safety"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -134,10 +79,9 @@
 
     <Button
         android:id="@+id/loansText"
-        android:layout_width="340dp"
+        android:layout_width="284dp"
         android:layout_height="40dp"
-        android:background="@drawable/button"
-        android:text="@string/loans"
+        android:background="@drawable/credits"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -173,10 +117,9 @@
 
     <Button
         android:id="@+id/depositsAndInvestmentsText"
-        android:layout_width="340dp"
+        android:layout_width="284dp"
         android:layout_height="40dp"
-        android:background="@drawable/button"
-        android:text="@string/depositsAndInvestments"
+        android:background="@drawable/vklad"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -203,14 +146,15 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="320dp"
-        android:layout_height="197dp"
+        android:layout_width="284dp"
+        android:layout_height="186dp"
         android:contentDescription="@string/cards"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.361"
+        app:layout_constraintVertical_bias="0.388"
         app:srcCompat="@drawable/cards" />
 
     <TextView
@@ -257,12 +201,12 @@
 
     <ImageView
         android:id="@+id/miniHistory"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="news"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.153"
@@ -271,8 +215,8 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="news"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -280,22 +224,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.153"
-        app:srcCompat="@drawable/news"
+        app:srcCompat="@drawable/service"
         tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="@string/good_day"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -303,23 +233,25 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.144"
-        app:srcCompat="@drawable/mini_icon" />
+        app:layout_constraintVertical_bias="0.14"
+        app:srcCompat="@drawable/mini_icon"
+        tools:ignore="ContentDescription" />
 
     <ImageView
-            android:id="@+id/ivWeather"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.854"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.203"
-            app:srcCompat="@drawable/mini_icon" />
+        android:id="@+id/ivWeather"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.221"
+        app:srcCompat="@drawable/mini_icon"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/tvWeather"
@@ -328,12 +260,25 @@
         android:gravity="center"
         android:text=""
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.221" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052"
+        app:srcCompat="@drawable/hello"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
