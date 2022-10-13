@@ -28,7 +28,7 @@ import java.net.URL;
 public class MainScreen extends AppCompatActivity {
     Button btnFunc, btnSupport, btnHistory;
     TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2, usd, eur, tvWeather;
-    ImageView ivWeather, miniHist;
+    ImageView ivWeather, miniHist, ivWeatherIcon;
     ImageView dollar, euro, ivCurrency;
 
     @Override
@@ -50,11 +50,13 @@ public class MainScreen extends AppCompatActivity {
         currency2 = findViewById(R.id.currency2);
 
         ivCurrency = findViewById(R.id.Currency);
+        ivWeatherIcon = findViewById(R.id.ivWeatherIcon);
         /*usd = findViewById(R.id.USD);
         eur = findViewById(R.id.EUR);
 
         dollar = findViewById(R.id.Dollar);
         euro = findViewById(R.id.Euro);*/
+
 
         String URLCurrency = "https://cdn.cur.su/api/cbr.json";
         new getURLForCurrency().execute(URLCurrency);
@@ -298,6 +300,8 @@ public class MainScreen extends AppCompatActivity {
             super.onPostExecute(result);
             try {
                 JSONObject obj = new JSONObject(result);
+                if(obj.getJSONArray("weather").getJSONObject(0).getString("main").equals("Clouds"))
+                    ivWeatherIcon.setBackgroundResource(R.drawable.cloudly);
                 tvWeather.setText(((int)obj.getJSONObject("main").getDouble("temp") + "°"));
             } catch (JSONException e) {
                 e.printStackTrace();
