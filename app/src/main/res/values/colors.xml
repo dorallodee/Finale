@@ -13,4 +13,5 @@
     <color name="textColorForWeather">#fff</color>
     <color name="hintColorForWeather">#c4c4c4</color>
     <color name="colorPrimary">#333</color>
+    <color name="bgTint">#B3B3B3</color>
 </resources>
