@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MiniHistories extends AppCompatActivity implements View.OnTouchListener {
 
@@ -18,6 +19,7 @@ public class MiniHistories extends AppCompatActivity implements View.OnTouchList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         iv = new ImageView(this);
+        Toast.makeText(MiniHistories.this, "hstry", Toast.LENGTH_SHORT).show();
         iv.setOnTouchListener(this); // для обработки касаний
         setContentView(R.layout.activity_mini_histories);
 
