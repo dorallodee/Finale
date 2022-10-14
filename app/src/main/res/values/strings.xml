@@ -39,6 +39,7 @@
     <string name="textandgarry">textAndGarry</string>
     <string name="bottomSentence">POWERED BY SUFFERING SOULS</string>
     <string name="converter">Converter</string>
+    <string name="MSC">Москва</string>
     <string-array name="currency">
         <item>AUD</item>
         <item>AZN</item>

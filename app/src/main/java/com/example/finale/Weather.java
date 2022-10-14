@@ -25,16 +25,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class Weather extends AppCompatActivity {
-    private String cityLat, cityLon;
     private EditText user_field;
     private Button button;
     private TextView resultInfo1, resultInfo2, resultInfo3, resultInfo4, resultInfo5, resultInfo6, resultInfo7, resultInfo8;
     private TextView date1, date2,  date3, date4, date5, date6, date7, date8;
-    private TextView tvTemp, tvMainDate, tv4;
+    private TextView tvTemp, tvMainDate;
     private ImageView icon1, icon2 ,icon3, icon4, icon5, icon6, icon7, icon8;
 
     @Override
@@ -76,8 +73,6 @@ public class Weather extends AppCompatActivity {
         icon7 = findViewById(R.id.icon7);
         icon8 = findViewById(R.id.icon8);
 
-        tv4 = findViewById(R.id.textView4);
-
         new getURL().execute("https://api.openweathermap.org/data/2.5/forecast?q=Moscow&appid=771f71c52bc5003a745ac9074cdb920f&units=metric");
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -89,8 +84,7 @@ public class Weather extends AppCompatActivity {
                 else{
                     city = user_field.getText().toString().trim();
                     key = "771f71c52bc5003a745ac9074cdb920f";
-                    URLWeather = "https://api.openweathermap.org/data/2.5/forecast?q=Moscow&appid=" + key + "&units=metric";
-
+                    URLWeather = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + key + "&units=metric";
                     new getURL().execute(URLWeather);
                 }
             }
@@ -150,22 +144,21 @@ public class Weather extends AppCompatActivity {
             super.onPostExecute(result);
             try {
                 JSONObject obj = new JSONObject(result);
-                tvTemp.setText(String.valueOf((int)obj.getJSONArray("list").getJSONObject(0).getJSONObject("main").getDouble("temp")) + "°");
+                tvTemp.setText((int)obj.getJSONArray("list").getJSONObject(0).getJSONObject("main").getDouble("temp") + "°");
                 tvMainDate.setText((obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(0, 4)));
-
                 for(int i = 0; i < 8; i++){
                     switch (i){
                         case 0:
                         {
                             resultInfo1.setText((int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp")+ "°");
                             date1.setText(obj.getJSONArray("list").getJSONObject(i).getString("dt_txt").substring(11).substring(0, 5));
-                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").contains("clouds"))
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clouds"))
                                 icon1.setBackgroundResource(R.drawable.cloudly);
-                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").contains("rain"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
                                 icon1.setBackgroundResource(R.drawable.rainy);
-                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").contains("clear"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
                                 icon1.setBackgroundResource(R.drawable.sunny);
-                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").contains("fog"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon1.setBackgroundResource(R.drawable.fog);
                             break;
                         }
@@ -173,13 +166,13 @@ public class Weather extends AppCompatActivity {
                         {
                             resultInfo2.setText((int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp")+ "°");
                             date2.setText(obj.getJSONArray("list").getJSONObject(i).getString("dt_txt").substring(11).substring(0, 5));
-                            if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clouds"))
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clouds"))
                                 icon2.setBackgroundResource(R.drawable.cloudly);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("rain"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
                                 icon2.setBackgroundResource(R.drawable.rainy);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clear"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
                                 icon2.setBackgroundResource(R.drawable.sunny);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("fog"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon2.setBackgroundResource(R.drawable.fog);
                             break;
                         }
@@ -187,13 +180,13 @@ public class Weather extends AppCompatActivity {
                         {
                             resultInfo3.setText((int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp")+ "°");
                             date3.setText(obj.getJSONArray("list").getJSONObject(i).getString("dt_txt").substring(11).substring(0, 5));
-                            if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clouds"))
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clouds"))
                                 icon3.setBackgroundResource(R.drawable.cloudly);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("rain"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
                                 icon3.setBackgroundResource(R.drawable.rainy);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clear"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
                                 icon3.setBackgroundResource(R.drawable.sunny);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("fog"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon3.setBackgroundResource(R.drawable.fog);
                             break;
                         }
@@ -201,13 +194,13 @@ public class Weather extends AppCompatActivity {
                         {
                             resultInfo4.setText((int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp")+ "°");
                             date4.setText(obj.getJSONArray("list").getJSONObject(i).getString("dt_txt").substring(11).substring(0, 5));
-                            if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clouds"))
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clouds"))
                                 icon4.setBackgroundResource(R.drawable.cloudly);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("rain"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
                                 icon4.setBackgroundResource(R.drawable.rainy);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clear"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
                                 icon4.setBackgroundResource(R.drawable.sunny);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("fog"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon4.setBackgroundResource(R.drawable.fog);
                             break;
                         }
@@ -215,13 +208,13 @@ public class Weather extends AppCompatActivity {
                         {
                             resultInfo5.setText((int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp")+ "°");
                             date5.setText(obj.getJSONArray("list").getJSONObject(i).getString("dt_txt").substring(11).substring(0, 5));
-                            if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clouds"))
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clouds"))
                                 icon5.setBackgroundResource(R.drawable.cloudly);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("rain"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
                                 icon5.setBackgroundResource(R.drawable.rainy);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clear"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
                                 icon5.setBackgroundResource(R.drawable.sunny);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("fog"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon5.setBackgroundResource(R.drawable.fog);
                             break;
                         }
@@ -229,13 +222,13 @@ public class Weather extends AppCompatActivity {
                         {
                             resultInfo6.setText((int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp")+ "°");
                             date6.setText(obj.getJSONArray("list").getJSONObject(i).getString("dt_txt").substring(11).substring(0, 5));
-                            if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clouds"))
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clouds"))
                                 icon6.setBackgroundResource(R.drawable.cloudly);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("rain"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
                                 icon6.setBackgroundResource(R.drawable.rainy);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clear"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
                                 icon6.setBackgroundResource(R.drawable.sunny);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("fog"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon6.setBackgroundResource(R.drawable.fog);
                             break;
                         }
@@ -243,13 +236,13 @@ public class Weather extends AppCompatActivity {
                         {
                             resultInfo7.setText((int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp")+ "°");
                             date7.setText(obj.getJSONArray("list").getJSONObject(i).getString("dt_txt").substring(11).substring(0, 5));
-                            if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clouds"))
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clouds"))
                                 icon7.setBackgroundResource(R.drawable.cloudly);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("rain"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
                                 icon7.setBackgroundResource(R.drawable.rainy);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clear"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
                                 icon7.setBackgroundResource(R.drawable.sunny);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("fog"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon7.setBackgroundResource(R.drawable.fog);
                             break;
                         }
@@ -257,13 +250,13 @@ public class Weather extends AppCompatActivity {
                         {
                             resultInfo8.setText((int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp")+ "°");
                             date8.setText(obj.getJSONArray("list").getJSONObject(i).getString("dt_txt").substring(11).substring(0, 5));
-                            if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clouds"))
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clouds"))
                                 icon8.setBackgroundResource(R.drawable.cloudly);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("rain"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
                                 icon8.setBackgroundResource(R.drawable.rainy);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("clear"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
                                 icon8.setBackgroundResource(R.drawable.sunny);
-                            else if(obj.getJSONArray("weather").getJSONObject(i).getString("main").toLowerCase().contains("fog"))
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon8.setBackgroundResource(R.drawable.fog);
                             break;
                         }

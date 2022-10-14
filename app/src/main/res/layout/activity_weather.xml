@@ -9,6 +9,60 @@
     tools:layout_editor_absoluteX="-42dp"
     tools:layout_editor_absoluteY="-200dp">
 
+    <EditText
+        android:id="@+id/user_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50sp"
+        android:backgroundTint="@color/teal_700"
+        android:ems="10"
+        android:hint="@string/hint_cityWeather"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/MSC"
+        android:textColor="@color/textColorForWeather"
+        android:textColorHint="@color/hintColorForWeather"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" />
+
+    <TextView
+        android:id="@+id/mainDate"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/button"
+        android:layout_marginHorizontal="20sp"
+        android:gravity="left"
+        android:text="12.06.2022"
+        android:textAlignment="gravity"
+        android:textColor="@color/hintColorForWeather"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.182" />
+
+    <TextView
+        android:id="@+id/tvTemp"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="50sp"
+        android:gravity="left"
+        android:text="5"
+        android:textColor="@color/white"
+        android:textSize="75sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246" />
+
     <TextView
         android:id="@+id/result1"
         android:layout_width="40dp"
@@ -298,26 +352,6 @@
         app:layout_constraintVertical_bias="0.659" />
 
 
-    <EditText
-        android:id="@+id/user_field"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50sp"
-        android:backgroundTint="@color/teal_700"
-        android:ems="10"
-        android:hint="@string/hint_cityWeather"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="Москва"
-        android:textColor="@color/textColorForWeather"
-        android:textColorHint="@color/hintColorForWeather"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
@@ -331,40 +365,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.956" />
-
-    <TextView
-        android:id="@+id/tvTemp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginHorizontal="50sp"
-        android:gravity="left"
-        android:text="5"
-        android:textColor="@color/white"
-        android:textSize="75sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245" />
-
-    <TextView
-        android:id="@+id/mainDate"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/button"
-        android:layout_marginHorizontal="20sp"
-        android:gravity="left"
-        android:text="12.06.2022"
-        android:textAlignment="gravity"
-        android:textColor="@color/hintColorForWeather"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182" />
 
     <TextView
         android:id="@+id/tvPoweredBy"
@@ -392,7 +392,6 @@
         android:id="@+id/icon1"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="@drawable/sunny"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
@@ -476,17 +475,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.561" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/icon4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainDate"
-        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
