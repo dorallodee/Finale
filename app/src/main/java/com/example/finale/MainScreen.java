@@ -301,12 +301,14 @@ public class MainScreen extends AppCompatActivity {
             super.onPostExecute(result);
             try {
                 JSONObject obj = new JSONObject(result);
-                if(obj.getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clouds"))
+                if(obj.getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("scattered clouds") || obj.getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("broken clouds") || obj.getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("overcast clouds"))
                     ivWeatherIcon.setBackgroundResource(R.drawable.cloudly);
                 else if(obj.getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
                     ivWeatherIcon.setBackgroundResource(R.drawable.rainy);
                 else if(obj.getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
                     ivWeatherIcon.setBackgroundResource(R.drawable.sunny);
+                else if(obj.getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("few clouds"))
+                    ivWeatherIcon.setBackgroundResource(R.drawable.partly_cloudly);
                 else if(obj.getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                     ivWeatherIcon.setBackgroundResource(R.drawable.fog);
                 tvWeather.setText(((int)obj.getJSONObject("main").getDouble("temp") + "°"));
