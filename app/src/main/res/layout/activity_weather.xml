@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#515151"
+    android:background="@drawable/background_weather"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteX="-42dp"
     tools:layout_editor_absoluteY="-200dp">
@@ -38,7 +38,7 @@
         android:gravity="left"
         android:text="12.06.2022"
         android:textAlignment="gravity"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
         android:gravity="center"
         android:text="12"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,11 +90,11 @@
         android:gravity="center"
         android:text="12"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.150"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
@@ -108,11 +108,11 @@
         android:gravity="center"
         android:text="12"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
@@ -126,11 +126,11 @@
         android:gravity="center"
         android:text="12"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="0.440"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
@@ -144,11 +144,11 @@
         android:gravity="center"
         android:text="12"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.585"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
@@ -162,11 +162,11 @@
         android:gravity="center"
         android:text="12"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.698"
+        app:layout_constraintHorizontal_bias="0.730"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
@@ -180,11 +180,11 @@
         android:gravity="center"
         android:text="12"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
@@ -198,11 +198,11 @@
         android:gravity="center"
         android:text="12"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.994"
+        app:layout_constraintHorizontal_bias="1.02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
@@ -216,7 +216,7 @@
         android:gravity="center"
         android:text="12:00"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -234,11 +234,11 @@
         android:gravity="center"
         android:text="12:00"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.659" />
@@ -252,7 +252,7 @@
         android:gravity="center"
         android:text="12:00"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -270,11 +270,11 @@
         android:gravity="center"
         android:text="12:00"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.659" />
@@ -288,11 +288,11 @@
         android:gravity="center"
         android:text="12:00"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.659" />
@@ -306,7 +306,7 @@
         android:gravity="center"
         android:text="12:00"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -324,7 +324,7 @@
         android:gravity="center"
         android:text="12:00"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -332,6 +332,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.659" />
+
 
     <TextView
         android:id="@+id/date8"
@@ -342,7 +343,7 @@
         android:gravity="center"
         android:text="12:00"
         android:textAlignment="center"
-        android:textColor="@color/hintColorForWeather"
+        android:textColor="@color/textColorForWeather"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -351,15 +352,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.659" />
 
-
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="135dp"
+        android:layout_height="45dp"
         android:layout_below="@id/user_field"
         android:layout_marginHorizontal="125sp"
-        android:backgroundTint="@color/teal_200"
-        android:text="@string/searchWeather"
+        android:background="@drawable/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -394,10 +393,10 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.562" />
+        app:layout_constraintVertical_bias="0.564" />
 
     <ImageView
         android:id="@+id/icon2"
@@ -405,10 +404,10 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.564" />
 
     <ImageView
         android:id="@+id/icon3"
@@ -416,10 +415,10 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.309"
+        app:layout_constraintHorizontal_bias="0.314"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.564" />
 
     <ImageView
         android:id="@+id/icon4"
@@ -427,10 +426,10 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.564" />
 
     <ImageView
         android:id="@+id/icon5"
@@ -438,10 +437,10 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.565" />
 
     <ImageView
         android:id="@+id/icon6"
@@ -449,10 +448,10 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintHorizontal_bias="0.685"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.564" />
 
     <ImageView
         android:id="@+id/icon7"
@@ -460,10 +459,10 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintHorizontal_bias="0.805"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.564" />
 
     <ImageView
         android:id="@+id/icon8"
@@ -474,6 +473,6 @@
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.565" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
