@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Вы вошли в свой профиль", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, MainScreen.class);
                     startActivity(intent);
+                    Intent i = new Intent(MainActivity.this, StartingScreen.class);
+                    startActivity(i);
                 } else if (login.getText().toString().trim().equals("")) {
                     Toast.makeText(MainActivity.this, "Введите логин", Toast.LENGTH_SHORT).show();
                 } else if (password.getText().toString().trim().equals("")) {

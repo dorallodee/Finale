@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
         tools:targetApi="31">
         <activity
+            android:name=".StartingScreen"
+            android:exported="false" />
+        <activity
             android:name=".MiniHistories"
             android:exported="false" />
         <activity
