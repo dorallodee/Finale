@@ -15,6 +15,11 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
         tools:targetApi="31">
         <activity
+            android:name=".Credits"
+            android:exported="false"
+            android:label="@string/title_activity_credits"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen.NoActionBar" />
+        <activity
             android:name=".StartingScreen"
             android:exported="false" />
         <activity

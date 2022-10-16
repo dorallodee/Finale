@@ -21,9 +21,9 @@
         tools:ignore="InvalidId" />
 
     <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/interactive_garry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/interactive_garry"
         android:layout_marginTop="500dp"
-        android:src="@drawable/garry"/>
+        android:src="@drawable/garry" />
 </FrameLayout>

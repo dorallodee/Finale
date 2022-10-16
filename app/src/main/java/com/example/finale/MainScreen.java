@@ -103,7 +103,7 @@ public class MainScreen extends AppCompatActivity {
         txtLoans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Loans.class);
+                Intent intent = new Intent(MainScreen.this, Credits.class);
                 startActivity(intent);
             }
         });
