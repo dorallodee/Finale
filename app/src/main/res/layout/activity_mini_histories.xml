@@ -20,11 +20,10 @@
         android:textSize="30sp"
         tools:ignore="InvalidId" />
 
-    <ImageView
-        android:contentDescription="@string/textandgarry"
-        android:id="@+id/imageView2"
+    <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550sp"
-        app:srcCompat="@drawable/garry" />
+        android:id="@+id/interactive_garry"
+        android:layout_marginTop="500dp"
+        android:src="@drawable/garry"/>
 </FrameLayout>
