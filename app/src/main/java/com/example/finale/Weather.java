@@ -35,9 +35,9 @@ public class Weather extends AppCompatActivity {
     private TextView resultInfo1, resultInfo2, resultInfo3, resultInfo4, resultInfo5, resultInfo6, resultInfo7, resultInfo8;
     private TextView date1, date2,  date3, date4, date5, date6, date7, date8;
     private TextView tvTemp, tvMainDate, tvInfo, minMax;
-    private TextView tvDay1, tvDay2, tvDay3, tvDay4;
+    private TextView tvDay1, tvDay2, tvDay3, tvDay4, tvDayTemp1, tvDayTemp2, tvDayTemp3, tvDayTemp4, tvDay1Humidity, tvDay2Humidity, tvDay3Humidity, tvDay4Humidity;
     private TextView wind1, wind2, wind3, wind4, wind5, wind6, wind7, wind8;
-    private ImageView icon1, icon2 ,icon3, icon4, icon5, icon6, icon7, icon8;
+    private ImageView icon1, icon2 ,icon3, icon4, icon5, icon6, icon7, icon8, iconDay1, iconDay2, iconDay3, iconDay4;
     int flag = 0;
 
     @Override
@@ -64,9 +64,17 @@ public class Weather extends AppCompatActivity {
         minMax = findViewById(R.id.minMax);
 
         tvDay1 = findViewById(R.id.tvDay1);
+        tvDayTemp1 = findViewById(R.id.tvDayTemp1);
+        tvDay1Humidity = findViewById(R.id.tvDay1Humidity);
         tvDay2 = findViewById(R.id.tvDay2);
+        tvDayTemp2 = findViewById(R.id.tvDayTemp2);
+        tvDay2Humidity = findViewById(R.id.tvDay2Humidity);
         tvDay3 = findViewById(R.id.tvDay3);
+        tvDayTemp3 = findViewById(R.id.tvDayTemp3);
+        tvDay3Humidity = findViewById(R.id.tvDay3Humidity);
         tvDay4 = findViewById(R.id.tvDay4);
+        tvDayTemp4 = findViewById(R.id.tvDayTemp4);
+        tvDay4Humidity = findViewById(R.id.tvDay4Humidity);
 
         date1 = findViewById(R.id.date1);
         date2 = findViewById(R.id.date2);
@@ -94,6 +102,10 @@ public class Weather extends AppCompatActivity {
         icon6 = findViewById(R.id.icon6);
         icon7 = findViewById(R.id.icon7);
         icon8 = findViewById(R.id.icon8);
+        iconDay1 = findViewById(R.id.iconDay1);
+        iconDay2 = findViewById(R.id.iconDay2);
+        iconDay3 = findViewById(R.id.iconDay3);
+        iconDay4 = findViewById(R.id.iconDay4);
 
         new getURLDay().execute("https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=771f71c52bc5003a745ac9074cdb920f&units=metric");
         new getURLForecast().execute("https://api.openweathermap.org/data/2.5/forecast?q=Moscow&appid=771f71c52bc5003a745ac9074cdb920f&units=metric");
@@ -389,23 +401,86 @@ public class Weather extends AppCompatActivity {
                         }
                     }
                 }
-                int[] avg = {0, 0, 0, 0};
+                int[] Min = {99, 99, 99, 99};
+                int[] Max = {-99, -99, -99, -99};
+                int[] Hum = {0, 0, 0, 0};
                 double buf = 0;
                 int c = 0;
                 minMax.setText("мин. " + min + "°, макс. " + max + "°");
                 for(int i = start; i < (start + 32); i++){
-                    if(i % 8 == 0 && i != 0){
+                    if(Min[c] > (int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp"))
+                        Min[c] = (int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp");
+                    if(Max[c] < (int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp"))
+                        Max[c] = (int)obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp");
+                    Hum[c] += obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getInt("humidity");
 
-                        avg[c] = (int)(buf/8.0);
-                        c++;
-                        buf = 0;
+                    if((i - start) % 5 == 0){
+                        if((i - start) == 5){
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("scattered clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("broken clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("overcast clouds"))
+                                iconDay1.setBackgroundResource(R.drawable.cloudly);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
+                                iconDay1.setBackgroundResource(R.drawable.rainy);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
+                                iconDay1.setBackgroundResource(R.drawable.sunny);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("few clouds"))
+                                iconDay1.setBackgroundResource(R.drawable.partly_cloudly);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
+                                iconDay1.setBackgroundResource(R.drawable.fog);
+                        }
+                        else if((i - start) == 10){
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("scattered clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("broken clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("overcast clouds"))
+                                iconDay2.setBackgroundResource(R.drawable.cloudly);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
+                                iconDay2.setBackgroundResource(R.drawable.rainy);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
+                                iconDay2.setBackgroundResource(R.drawable.sunny);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("few clouds"))
+                                iconDay2.setBackgroundResource(R.drawable.partly_cloudly);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
+                                iconDay2.setBackgroundResource(R.drawable.fog);
+                        }
+                        else if((i - start) == 15){
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("scattered clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("broken clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("overcast clouds"))
+                                iconDay3.setBackgroundResource(R.drawable.cloudly);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
+                                iconDay3.setBackgroundResource(R.drawable.rainy);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
+                                iconDay3.setBackgroundResource(R.drawable.sunny);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("few clouds"))
+                                iconDay3.setBackgroundResource(R.drawable.partly_cloudly);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
+                                iconDay3.setBackgroundResource(R.drawable.fog);
+                        }
+                        else if((i - start) == 20){
+                            if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("scattered clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("broken clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("overcast clouds"))
+                                iconDay4.setBackgroundResource(R.drawable.cloudly);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("rain"))
+                                iconDay4.setBackgroundResource(R.drawable.rainy);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("clear"))
+                                iconDay4.setBackgroundResource(R.drawable.sunny);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("few clouds"))
+                                iconDay4.setBackgroundResource(R.drawable.partly_cloudly);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
+                                iconDay4.setBackgroundResource(R.drawable.fog);
+                        }
                     }
-                    buf += obj.getJSONArray("list").getJSONObject(i).getJSONObject("main").getDouble("temp");
+
+                    if(((i - start) % 8 == 0 && (i - start) != 0)){
+                        c++;
+                    }
                 }
-                tvDay1.setText((obj.getJSONArray("list").getJSONObject(start).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(0, 4)) + " темп. " + avg[0] + "°");
-                tvDay2.setText((obj.getJSONArray("list").getJSONObject(start + 8).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(0, 4)) + " темп. " + avg[1] + "°");
-                tvDay3.setText((obj.getJSONArray("list").getJSONObject(start + 16).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(0, 4)) + " темп. " + avg[2] + "°");
-                tvDay4.setText((obj.getJSONArray("list").getJSONObject(start + 24).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(0, 4)) + " темп. " + avg[3] + "°");
+                tvDay1.setText((obj.getJSONArray("list").getJSONObject(start).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)));
+                tvDayTemp1.setText("Днем " + Max[0] + "°\n" + "Ночью " + Min[0] + "°");
+                tvDay2.setText((obj.getJSONArray("list").getJSONObject(start + 8).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)));
+                tvDayTemp2.setText("Днем " + Max[1] + "°\n" + "Ночью " + Min[1] + "°");
+                tvDay3.setText((obj.getJSONArray("list").getJSONObject(start + 16).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)));
+                tvDayTemp3.setText("Днем " + Max[2] + "°\n" + "Ночью " + Min[2] + "°");
+                tvDay4.setText((obj.getJSONArray("list").getJSONObject(start + 24).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)));
+                tvDayTemp4.setText("Днем " + Max[3] + "°\n" + "Ночью " + Min[3] + "°");
+                tvDay1Humidity.setText(Hum[0]/8 + "%");
+                tvDay2Humidity.setText(Hum[1]/8 + "%");
+                tvDay3Humidity.setText(Hum[2]/8 + "%");
+                tvDay4Humidity.setText(Hum[3]/8 + "%");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
