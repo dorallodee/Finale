@@ -160,32 +160,66 @@
         app:srcCompat="@drawable/cards" />
 
     <TextView
-        android:id="@+id/currency4"
-        android:layout_width="191dp"
-        android:layout_height="42dp"
+        android:id="@+id/card2"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
         android:backgroundTint="#FFFFFF"
-        android:textSize="26sp"
+        android:hint="@string/card2"
+        android:textSize="14sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintVertical_bias="0.478" />
 
     <TextView
-        android:id="@+id/currency3"
-        android:layout_width="191dp"
-        android:layout_height="42dp"
+        android:id="@+id/card1"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
         android:backgroundTint="#FFFFFF"
-        android:textSize="26sp"
+        android:hint="@string/card1"
+        android:textSize="14sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.394" />
+        app:layout_constraintVertical_bias="0.413" />
+
+    <TextView
+        android:id="@+id/balance1"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#FFFFFF"
+        android:hint="@string/balance1"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.383" />
+
+    <TextView
+        android:id="@+id/balance2"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#FFFFFF"
+        android:hint="@string/balance2"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -258,13 +292,13 @@
     <TextView
 
         android:id="@+id/tvWeather"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center"
         android:shadowColor="@color/black"
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="1"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
         android:text=""
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -298,5 +332,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.195" />
+
+    <TextView
+        android:id="@+id/_name"
+        android:layout_width="90dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:background="#FFFFFF"
+        android:hint="@string/name"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.078" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -26,18 +29,25 @@ import java.math.RoundingMode;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 
 public class MainScreen extends AppCompatActivity {
     Button btnFunc, btnSupport, btnHistory;
-    TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2, usd, eur, tvWeather;
+    TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2,
+            tvCard1, tvCard2, tvBalance1, tvBalance2, tvWeather, tvName;
     ImageView ivWeather, miniHist, ivWeatherIcon;
     ImageView dollar, euro, ivCurrency;
+
+    private DBHelper mDBHelper;
+    private SQLiteDatabase mDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_sreen);
+
         btnFunc = findViewById(R.id.buttonFunc);
         btnSupport = findViewById(R.id.buttonSupport);
         btnHistory = findViewById(R.id.buttonHistory);
@@ -46,6 +56,11 @@ public class MainScreen extends AppCompatActivity {
         txtLoans = findViewById(R.id.loansText);
         txtSecurity = findViewById(R.id.securityText);
         tvWeather = findViewById(R.id.tvWeather);
+        tvName = findViewById(R.id._name);
+        tvCard1 = findViewById(R.id.card1);
+        tvCard2 = findViewById(R.id.card2);
+        tvBalance1 = findViewById(R.id.balance1);
+        tvBalance2 = findViewById(R.id.balance2);
         ivWeather = findViewById(R.id.ivWeather);
         miniHist = findViewById(R.id.miniHistory);
 
@@ -54,19 +69,136 @@ public class MainScreen extends AppCompatActivity {
 
         ivCurrency = findViewById(R.id.Currency);
         ivWeatherIcon = findViewById(R.id.ivWeatherIcon);
+
         /*usd = findViewById(R.id.USD);
         eur = findViewById(R.id.EUR);
 
         dollar = findViewById(R.id.Dollar);
         euro = findViewById(R.id.Euro);*/
 
+        mDBHelper = new DBHelper(this);
+
+        try {
+            mDBHelper.updateDataBase();
+        } catch (IOException mIOException) {
+            throw new Error("UnableToUpdateDatabase");
+        }
+
+        try {
+            mDb = mDBHelper.getWritableDatabase();
+        } catch (SQLException mSQLException) {
+            throw mSQLException;
+        }
+
+        Bundle arguments = getIntent().getExtras();
+        String strInd;
+
+        if(arguments != null)
+            strInd = arguments.get("index").toString();
+        else
+            strInd = "0";
+
+        int index = Integer.parseInt(strInd);
+
+        String name, patronymic, surname, login, password, card1, card2,
+                phoneNum, pin1, pin2, cvv1, cvv2, balance1, balance2;
+
+        // Отправляем запрос в БД
+        Cursor cursor = mDb.rawQuery("SELECT * FROM Accounts", null);
+        cursor.move(index + 1);
+
+        // Пробегаем по клиенту
+        name = cursor.getString(1);
+        patronymic = cursor.getString(2);
+        surname = cursor.getString(3);
+        login = cursor.getString(4);
+        password = cursor.getString(5);
+
+        card1 = cursor.getString(6);
+        card2 = cursor.getString(7);
+
+        phoneNum = cursor.getString(8);
+        pin1 = cursor.getString(9);
+        pin2 = cursor.getString(10);
+        cvv1 = cursor.getString(11);
+        cvv2 = cursor.getString(12);
+
+        balance1 = String.valueOf(cursor.getDouble(13));
+
+        balance2 = String.valueOf(cursor.getDouble(14));
+
+        cursor.close();
+
+        tvName.setText(name);
+
+        tvCard1.setText("Карта ···· " + card1.substring(card1.length() - 4));
+
+        tvCard2.setText("Карта ···· " + card2.substring(card2.length() - 4));
+
+        tvBalance1.setText((balance1.length() > 3 ?
+                (balance1.contains(".") ?
+                        balance1.substring(0, balance1.length() - 5) + " "
+                                + balance1.substring(balance1.length() - 5) :
+                        balance1.substring(0, balance1.length() - 3) + " "
+                                + balance1.substring(balance1.length() - 3)) : balance1) + " ₽");
+
+        tvBalance2.setText((balance2.length() > 3 ?
+                (balance2.contains(".") ?
+                        balance2.substring(0, balance2.length() - 5) + " "
+                                + balance2.substring(balance2.length() - 5) :
+                        balance2.substring(0, balance2.length() - 3) + " "
+                                + balance2.substring(balance2.length() - 3)) : balance2) + " ₽");
 
         String URLCurrency = "https://cdn.cur.su/api/cbr.json";
         new getURLForCurrency().execute(URLCurrency);
 
         String key = "771f71c52bc5003a745ac9074cdb920f";
-        String URLWeather = "https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=" + key + "&units=metric";
-        new getURLForWeather().execute(URLWeather);
+        //String URLWeather = "https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=" + key + "&units=metric";
+        //new getURLForWeather().execute(URLWeather);
+
+        tvBalance1.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Card1.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("name", name);
+            intent.putExtra("patronymic", patronymic);
+            intent.putExtra("surname", surname);
+            intent.putExtra("card", card1);
+            intent.putExtra("balance", balance1);
+            startActivity(intent);
+        });
+
+        tvBalance2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Card2.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("name", name);
+            intent.putExtra("patronymic", patronymic);
+            intent.putExtra("surname", surname);
+            intent.putExtra("card", card2);
+            intent.putExtra("balance", balance2);
+            startActivity(intent);
+        });
+
+        tvCard1.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Card1.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("name", name);
+            intent.putExtra("patronymic", patronymic);
+            intent.putExtra("surname", surname);
+            intent.putExtra("card", card1);
+            intent.putExtra("balance", balance1);
+            startActivity(intent);
+        });
+
+        tvCard2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Card2.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("name", name);
+            intent.putExtra("patronymic", patronymic);
+            intent.putExtra("surname", surname);
+            intent.putExtra("card", card2);
+            intent.putExtra("balance", balance2);
+            startActivity(intent);
+        });
 
         btnFunc.setOnClickListener(new View.OnClickListener() {
             @Override

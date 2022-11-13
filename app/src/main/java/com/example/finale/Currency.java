@@ -33,11 +33,12 @@ import java.util.regex.Pattern;
 
 public class Currency extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     int tvBuf;
+    double smt;
     String buf;
     Spinner spinner11, spinner12, spinner21, spinner22;
     TextView tv1, tv2;
     EditText ed1;
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnDot, btnDelete;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnDot, btnDelete, btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +86,6 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
 
             @Override
             public void afterTextChanged(Editable s) {
-                tvBuf = 2;
                 new Currency.getURL().execute(URL);
             }
         });
@@ -294,38 +294,18 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
 
             try {
                 JSONObject obj = new JSONObject(result);
-                switch (tvBuf){
-                    case 1:
-                    {
-                        tv1.setText("1 " + spinner11.getSelectedItem().toString() + " = " + BigDecimal.valueOf( obj.getJSONObject("rates").getDouble(spinner12.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner11.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + spinner12.getSelectedItem().toString());
-                        break;
-                    }
-                    case 2:
-                    {
-                        if(!ed1.getText().toString().trim().isEmpty() && ed1.getText().toString().trim().toCharArray()[ed1.getText().toString().trim().length() - 1] == '.')
-                            break;
+                if(!ed1.getText().toString().isEmpty()){
+                    if(!ed1.getText().toString().trim().isEmpty() && ed1.getText().toString().trim().toCharArray()[ed1.getText().toString().trim().length() - 1] == '.')
                         if(ed1.getText().toString().trim().isEmpty()){
-                            //tv2.setText("1 " + spinner21.getSelectedItem().toString() + " = " +  BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + " " + spinner22.getSelectedItem().toString());
-                            tv2.setText(BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).toString());
-                            break;
+                            tv2.setText(BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(2, RoundingMode.HALF_UP).toString());
                         }
-                        /*
-                        Pattern pattern = Pattern.compile("[^0-9]");
-                        Matcher matcher = pattern.matcher(ed1.getText().toString().trim());
-                        boolean isBad = matcher.find();
-                        if (isBad)
-                            break;
-                        */
-                        //ДЛЯ ОТОБРАЖЕНИЕ В ВИДЕ "100 ЮСД = 43043424324 БКБ"
-                        //tv2.setText(ed1.getText().toString().trim() + " " + spinner21.getSelectedItem().toString() + " = " +  BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).doubleValue() + " " + spinner22.getSelectedItem().toString());
-                        tv2.setText(BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP).toString());
-                    }
+                    tv2.setText(String.valueOf(BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP)));
                 }
+                else
+                    tv2.setText(String.valueOf(BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(2, RoundingMode.HALF_UP)));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
         }
     }
 }
