@@ -44,9 +44,6 @@ public class MainActivity extends AppCompatActivity {
             throw mSQLException;
         }
 
-        // Список клиентов
-        ArrayList<HashMap<String, Object>> clients = new ArrayList<HashMap<String, Object>>();
-
         /*
         String[] name = new String[3];
         String[] patronymic = new String[3];
@@ -65,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
         String[] cvv1 = new String[3];
         String[] cvv2 = new String[3];
         */
-        // Список параметров конкретного клиента
-        HashMap<String, Object> client;
+
 
         // Отправляем запрос в БД
         Cursor cursor = mDb.rawQuery("SELECT * FROM Accounts", null);
@@ -76,16 +72,6 @@ public class MainActivity extends AppCompatActivity {
         while (!cursor.isAfterLast()) {
             logins[i] = cursor.getString(4);
             passwords[i] = cursor.getString(5);
-            //client = new HashMap<String, Object>();
-
-            // Заполняем клиента
-            //client.put("name",  cursor.getString(4));
-            //client.put("age",  cursor.getString(5));
-
-            // Закидываем клиента в список клиентов
-            //clients.add(client);
-
-            // Переходим к следующему клиенту
             cursor.moveToNext();
             i++;
         }

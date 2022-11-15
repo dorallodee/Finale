@@ -9,11 +9,36 @@
     tools:context=".Credits"
     tools:showIn="@layout/activity_credits">
 
-    <ListView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:dividerHeight="1dp"
-        android:id="@+id/list"
-        tools:listitem="@layout/activity_listview" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Мои кредиты"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="1dp"
+            tools:listitem="@layout/activity_listview" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Возможные кредиты"
+            android:textSize="20sp" />
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="1dp"
+            android:id="@+id/list2"
+            tools:listitem="@layout/activity_listview2"/>
+    </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

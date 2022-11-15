@@ -89,13 +89,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Loans"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".DepositsAndInvestments"
             android:exported="false">
             <meta-data

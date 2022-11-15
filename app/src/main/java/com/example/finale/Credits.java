@@ -19,6 +19,7 @@ public class Credits extends AppCompatActivity {
 
     //private ActivityCreditsBinding binding;
     String[] array = {"Кредит 1", "Кредит 2", "Кредит 3"};
+    String[] array2 = {"Воьмите этот", "Или этот", "Еще один варик", "Ну или хотя бы этот"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,12 @@ public class Credits extends AppCompatActivity {
 
         ListView listView = (ListView)findViewById(R.id.list);
         listView.setAdapter(adapter);
+
+        ArrayAdapter adapter2 = new ArrayAdapter<String>(this, R.layout.activity_listview2, array2);
+
+        ListView listView2 = (ListView)findViewById(R.id.list2);
+        listView2.setAdapter(adapter2);
+
         /*
         binding = ActivityCreditsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
