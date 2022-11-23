@@ -37,7 +37,7 @@
         app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
+        app:layout_constraintVertical_bias="0.603" />
 
     <TextView
         android:id="@+id/currency2"
@@ -51,7 +51,7 @@
         app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
+        app:layout_constraintVertical_bias="0.667" />
 
     <Button
         android:id="@+id/securityText"
@@ -153,10 +153,10 @@
         android:contentDescription="@string/cards"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388"
+        app:layout_constraintVertical_bias="0.385"
         app:srcCompat="@drawable/cards" />
 
     <TextView
@@ -172,7 +172,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/card1"
@@ -203,13 +203,12 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383" />
+        app:layout_constraintVertical_bias="0.372" />
 
     <TextView
         android:id="@+id/balance2"
         android:layout_width="150dp"
         android:layout_height="30dp"
-        android:layout_marginTop="5dp"
         android:backgroundTint="#FFFFFF"
         android:hint="@string/balance2"
         android:textSize="20sp"
@@ -219,7 +218,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.449" />
+        app:layout_constraintVertical_bias="0.463" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
