@@ -12,6 +12,7 @@
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/manrope"
         android:text="@string/health"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,13 +20,14 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.559" />
+        app:layout_constraintVertical_bias="0.58" />
 
     <TextView
         android:id="@+id/recreation"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/manrope"
         android:text="@string/recreationAndEnt"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,41 +35,44 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603" />
+        app:layout_constraintVertical_bias="0.63" />
 
     <TextView
         android:id="@+id/labelPay"
         android:layout_width="300dp"
         android:layout_height="30dp"
+        android:fontFamily="@font/manrope"
         android:text="@string/pay"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <TextView
         android:id="@+id/labelTransfer"
         android:layout_width="300dp"
         android:layout_height="30dp"
+        android:fontFamily="@font/manrope"
         android:text="@string/transfer"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <EditText
         android:id="@+id/phoneOrCardNumber"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:ems="10"
+        android:fontFamily="@font/manrope"
         android:hint="@string/transferHint"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,6 +87,7 @@
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/manrope"
         android:text="@string/communals"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -89,7 +95,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.38" />
 
     <TextView
         android:id="@+id/mobileNet"
@@ -97,6 +103,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:background=""
+        android:fontFamily="@font/manrope"
         android:text="@string/mobileNet"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -104,13 +111,14 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintVertical_bias="0.33" />
 
     <TextView
         android:id="@+id/taxes"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/manrope"
         android:text="@string/taxes"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,13 +126,14 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintVertical_bias="0.53" />
 
     <TextView
         android:id="@+id/transport"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/manrope"
         android:text="@string/transport"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -132,13 +141,14 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424" />
+        app:layout_constraintVertical_bias="0.43" />
 
     <TextView
         android:id="@+id/education"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/manrope"
         android:text="@string/education"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -146,7 +156,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <EditText
         android:id="@+id/separator6"
@@ -162,10 +172,10 @@
         android:textColorHint="@color/tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.450"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574" />
+        app:layout_constraintVertical_bias="0.60" />
 
     <EditText
         android:id="@+id/separator1"
@@ -181,10 +191,10 @@
         android:textColorHint="@color/tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.450"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.36" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <EditText
         android:id="@+id/separator2"
@@ -193,6 +203,7 @@
         android:backgroundTint="#000000"
         android:ems="10"
         android:enabled="false"
+        android:fontFamily="@font/manrope"
         android:gravity="center"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
@@ -200,10 +211,10 @@
         android:textColorHint="@color/tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.450"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.394" />
+        app:layout_constraintVertical_bias="0.40" />
 
 
     <EditText
@@ -220,10 +231,10 @@
         android:textColorHint="@color/tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.450"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintVertical_bias="0.50" />
 
     <EditText
         android:id="@+id/separator3"
@@ -239,10 +250,10 @@
         android:textColorHint="@color/tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.450"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintVertical_bias="0.45" />
 
     <EditText
         android:id="@+id/separator5"
@@ -258,10 +269,10 @@
         android:textColorHint="@color/tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.450"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <Button
         android:id="@+id/doTransfer"
@@ -285,7 +296,7 @@
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339"
+        app:layout_constraintVertical_bias="0.33"
         app:srcCompat="@drawable/icon_phone_call" />
 
     <ImageView
@@ -297,7 +308,7 @@
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382"
+        app:layout_constraintVertical_bias="0.38"
         app:srcCompat="@drawable/icon_home" />
 
     <ImageView
@@ -309,7 +320,7 @@
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425"
+        app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@drawable/icon_bus" />
 
     <ImageView
@@ -321,7 +332,7 @@
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467"
+        app:layout_constraintVertical_bias="0.48"
         app:srcCompat="@drawable/icon_school" />
 
     <ImageView
@@ -333,7 +344,7 @@
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516"
+        app:layout_constraintVertical_bias="0.53"
         app:srcCompat="@drawable/icon_tax" />
 
     <ImageView
@@ -345,7 +356,7 @@
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.559"
+        app:layout_constraintVertical_bias="0.58"
         app:srcCompat="@drawable/icon_heartbeat" />
 
     <ImageView
@@ -357,7 +368,7 @@
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603"
+        app:layout_constraintVertical_bias="0.63"
         app:srcCompat="@drawable/icon_shopping" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
