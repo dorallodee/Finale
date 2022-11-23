@@ -11,7 +11,7 @@
         android:id="@+id/tvConverter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/alfa_slab_one"
+        android:fontFamily="@font/source_sans_pro"
         android:text="@string/converter"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"

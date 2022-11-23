@@ -181,7 +181,7 @@
     <string name="mobileNet">Мобильная связь</string>
     <string name="pay">Оплатить</string>
     <string name="transfer">Перевести</string>
-    <string name="transferHint">Перевод по номеру телефона или карты</string>
+    <string name="transferHint">Введите номер телефона или карты</string>
     <string name="health">Здоровье</string>
     <string name="recreationAndEnt">Отдых и развлечения</string>
     <string name="transferBetween">Перевод между своими</string>
