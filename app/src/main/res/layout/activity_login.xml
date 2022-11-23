@@ -12,7 +12,9 @@
         android:layout_width="325dp"
         android:layout_height="55dp"
         android:background="@drawable/login_button"
-        android:fontFamily="@font/source_sans_pro"
+        android:fontFamily="@font/manrope_semibold"
+        android:text="Войти"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +28,7 @@
         android:layout_height="55dp"
         android:background="@drawable/user"
         android:ems="10"
-        android:fontFamily="@font/source_sans_pro"
+        android:fontFamily="@font/manrope_semibold"
         android:gravity="center"
         android:hint="@string/login"
         android:importantForAutofill="no"
@@ -47,7 +49,7 @@
         android:autofillHints=""
         android:background="@drawable/password"
         android:ems="10"
-        android:fontFamily="@font/source_sans_pro"
+        android:fontFamily="@font/manrope_semibold"
         android:gravity="center"
         android:hint="@string/password"
         android:inputType="textPassword"
@@ -59,16 +61,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.588" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="82dp"
-        android:layout_height="48dp"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_semibold"
+        android:text="Вход"
+        android:textColor="#000000"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342"
-        app:srcCompat="@drawable/open"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintVertical_bias="0.33" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
