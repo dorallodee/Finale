@@ -174,4 +174,15 @@
     <string name="name">ИМЯ</string>
     <string name="balance2">225 873 ₽</string>
     <string name="balance1">13 337 ₽</string>
+    <string name="taxes">Налоги</string>
+    <string name="education">Образование</string>
+    <string name="transport">Транспорт</string>
+    <string name="communals">Услуги ЖКХ</string>
+    <string name="mobileNet">Мобильная связь</string>
+    <string name="pay">Оплатить</string>
+    <string name="transfer">Перевести</string>
+    <string name="transferHint">Перевод по номеру телефона или карты</string>
+    <string name="health">Здоровье</string>
+    <string name="recreationAndEnt">Отдых и развлечения</string>
+    <string name="transferBetween">Перевод между своими</string>
 </resources>

@@ -15,6 +15,9 @@ public class Transfer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transfer);
 
+
+
+        /*
         String[] items = {"Между своими", "Другому человеку", "Оплата услуг"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -47,5 +50,6 @@ public class Transfer extends AppCompatActivity {
                 });
         Dialog buf = builder.create();
         buf.show();
+        */
     }
 }

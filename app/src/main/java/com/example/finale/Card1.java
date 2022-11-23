@@ -61,6 +61,16 @@ public class Card1 extends AppCompatActivity {
                                 + balance.substring(balance.length() - 3)) : balance) + " ₽");
 
         transfer.setOnClickListener(v -> {
+            Intent intent = new Intent(Card1.this, Services.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("card", "card1");
+            startActivity(intent);
+
+            /*
+
+            ДИАЛОГОВОЕ ОКНО С ВЫБОРОМ, ОТ КОТОРОГО, СЧИТАЮ, СТОИТ ОТКАЗАТЬСЯ В ПОЛЬЗУ РАЗМЕЩЕНИЯ ВСЕГО,
+            ЧТО СВЯЗАНО С ПЛАТЕЖАМИ, НА ОДНОЙ СТРАНИЦЕ, ПОСКОЛЬКУ И ТАК МНОГО activities
+
             String[] items = {"Между своими", "Другому человеку", "Оплата услуг"};
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -70,7 +80,7 @@ public class Card1 extends AppCompatActivity {
                     {
                         case 0:
                         {
-                            Intent intent = new Intent(Card1.this, BWYours.class);
+                            Intent intent = new Intent(Card1.this, Transfer.class);
                             startActivity(intent);
                             break;
                         }
@@ -93,6 +103,7 @@ public class Card1 extends AppCompatActivity {
             });
             Dialog buf = builder.create();
             buf.show();
+            */
 
             /*
             Intent intent = new Intent(Card1.this, Transfer.class);

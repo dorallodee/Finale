@@ -35,7 +35,8 @@
                     android:layout_marginLeft="280dp"
                     android:layout_marginTop="60dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/nice_duck" />
+                    android:src="@drawable/nice_duck"
+                    tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <androidx.appcompat.widget.Toolbar
