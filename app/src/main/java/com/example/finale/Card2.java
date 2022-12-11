@@ -6,13 +6,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 public class Card2 extends AppCompatActivity {
+    int index;
+
     TextView tvCardNum, tvFullName, tvBalance;
     Button transfer, topUp, info;
+
+    private DBHelper mDBHelper;
+    private SQLiteDatabase mDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +39,7 @@ public class Card2 extends AppCompatActivity {
 
 
         Bundle arguments = getIntent().getExtras();
-        String strInd, name, patronymic, surname, card, balance;
+        String strInd, name, patronymic, surname, card;
 
         if(arguments != null){
             strInd = arguments.get("index").toString();
@@ -37,7 +47,6 @@ public class Card2 extends AppCompatActivity {
             patronymic = arguments.get("patronymic").toString();
             surname = arguments.get("surname").toString();
             card = arguments.get("card").toString();
-            balance = arguments.get("balance").toString();
         }
         else{
             strInd = "0";
@@ -45,10 +54,43 @@ public class Card2 extends AppCompatActivity {
             patronymic = "0";
             surname = "0";
             card = "0";
-            balance = "0";
         }
 
-        tvCardNum.setText(card);
+        index = Integer.parseInt(strInd);
+
+        mDBHelper = new DBHelper(this);
+
+        try {
+            mDBHelper.updateDataBase();
+        } catch (IOException mIOException) {
+            throw new Error("UnableToUpdateDatabase");
+        }
+
+        try {
+            mDb = mDBHelper.getWritableDatabase();
+        } catch (SQLException mSQLException) {
+            throw mSQLException;
+        }
+
+        mDBHelper = new DBHelper(this);
+
+        try {
+            mDBHelper.updateDataBase();
+        } catch (IOException mIOException) {
+            throw new Error("UnableToUpdateDatabase");
+        }
+
+        try {
+            mDb = mDBHelper.getWritableDatabase();
+        } catch (SQLException mSQLException) {
+            throw mSQLException;
+        }
+
+        Cursor cursor = mDb.rawQuery("SELECT * FROM Accounts", null);
+        cursor.move(index + 1);
+        String balance = String.valueOf(cursor.getDouble(14));
+
+        tvCardNum.setText(card.substring(0, 4) + " " +card.substring(4, 8) + " " +card.substring(8, 12) + " " + card.substring(12) );
 
         tvFullName.setText(name + " " + patronymic + " " + surname);
 
@@ -64,51 +106,36 @@ public class Card2 extends AppCompatActivity {
             intent.putExtra("index", strInd);
             intent.putExtra("card", "card2");
             startActivity(intent);
-
-            /*
-
-            ДИАЛОГОВОЕ ОКНО С ВЫБОРОМ, ОТ КОТОРОГО, СЧИТАЮ, СТОИТ ОТКАЗАТЬСЯ В ПОЛЬЗУ РАЗМЕЩЕНИЯ ВСЕГО,
-            ЧТО СВЯЗАНО С ПЛАТЕЖАМИ, НА ОДНОЙ СТРАНИЦЕ, ПОСКОЛЬКУ И ТАК МНОГО activities
-
-            String[] items = {"Между своими", "Другому человеку", "Оплата услуг"};
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("").setItems(items, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    switch (which)
-                    {
-                        case 0:
-                        {
-                            Intent intent = new Intent(Card1.this, Transfer.class);
-                            startActivity(intent);
-                            break;
-                        }
-                        case 1:
-                        {
-                            Intent intent = new Intent(Card1.this, ToWhom.class);
-                            startActivity(intent);
-                            break;
-                        }
-                        case 2:
-                        {
-                            Intent intent = new Intent(Card1.this, Services.class);
-                            startActivity(intent);
-                            break;
-                        }
-                    }
-
-                    //Toast.makeText(Transfer.this, "Выбранный: " + which, Toast.LENGTH_SHORT).show();
-                }
-            });
-            Dialog buf = builder.create();
-            buf.show();
-            */
-
-            /*
-            Intent intent = new Intent(Card1.this, Transfer.class);
-            intent.putExtra("index", strInd);
-            startActivity(intent);
-            */
         });
+    }
+
+    @Override
+    protected void onRestart() {
+        mDBHelper = new DBHelper(this);
+
+        try {
+            mDBHelper.updateDataBase();
+        } catch (IOException mIOException) {
+            throw new Error("UnableToUpdateDatabase");
+        }
+
+        try {
+            mDb = mDBHelper.getWritableDatabase();
+        } catch (SQLException mSQLException) {
+            throw mSQLException;
+        }
+        Cursor cursor = mDb.rawQuery("SELECT * FROM Accounts", null);
+        cursor.move(index + 1);
+
+        String balance = String.valueOf(cursor.getDouble(14));
+
+        tvBalance.setText((balance.length() > 3 ?
+                (balance.contains(".") ?
+                        balance.substring(0, balance.length() - 5) + " "
+                                + balance.substring(balance.length() - 5) :
+                        balance.substring(0, balance.length() - 3) + " "
+                                + balance.substring(balance.length() - 3)) : balance) + " ₽");
+
+        super.onRestart();
     }
 }

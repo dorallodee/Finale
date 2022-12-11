@@ -82,32 +82,8 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
             view = inflater.inflate(R.layout.child_item, null);
         }
         TextView item = view.findViewById(R.id.model);
-        ImageView delete = view.findViewById(R.id.delete);
+
         item.setText(tab);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setMessage("Remove?");
-                builder.setCancelable(true);
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int id) {
-                        List<String> child = tabCollection.get(groupList.get(i));
-                        child.remove(i1);
-                        notifyDataSetChanged();
-                    }
-                });
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
-            }
-        });
         return view;
     }
 

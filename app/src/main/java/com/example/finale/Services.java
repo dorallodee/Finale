@@ -2,10 +2,14 @@ package com.example.finale;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,8 +19,8 @@ import java.io.IOException;
 
 public class Services extends AppCompatActivity {
 
-    TextView tvBetween, tvMobileNet, tvCommunalServices, tvTransport, tvEducation, tvTaxes, tvHealth, tvRecreation;
-    EditText sep0, sep1, sep2, sep3, sep4, sep5, sep6, phoneOrCardNumber;
+    TextView tvBetween, tvMobileNet, tvCommunalServices, tvTransport, tvEducation, tvTaxes, tvHealth, tvRecreation, tv7;
+    EditText phoneOrCardNumber;
     Button doTransfer;
 
     private DBHelper mDBHelper;
@@ -35,15 +39,10 @@ public class Services extends AppCompatActivity {
         tvTaxes = findViewById(R.id.taxes);
         tvHealth = findViewById(R.id.health);
         tvRecreation = findViewById(R.id.recreation);
+        tv7 = findViewById(R.id.id7);
+
         phoneOrCardNumber = findViewById(R.id.phoneOrCardNumber);
 
-        sep0 = findViewById(R.id.separator0);
-        sep1 = findViewById(R.id.separator1);
-        sep2 = findViewById(R.id.separator2);
-        sep3 = findViewById(R.id.separator3);
-        sep4 = findViewById(R.id.separator4);
-        sep5 = findViewById(R.id.separator5);
-        sep6 = findViewById(R.id.separator6);
 
         doTransfer = findViewById(R.id.doTransfer);
 
@@ -79,21 +78,20 @@ public class Services extends AppCompatActivity {
         cursor.move(index + 1);
 
         if(card.equals("card1")){
-            pin = cursor.getString(9);
+            card = cursor.getString(6);
             balance = String.valueOf(cursor.getDouble(13));
         }
         else{
-            pin = cursor.getString(10);
+            card = cursor.getString(7);
             balance = String.valueOf(cursor.getDouble(14));
         }
-
+        String CARD = card;
         cursor.moveToFirst();
-
-
 
         String[] cards1 = new String[3];
         String[] cards2 = new String[3];
         String[] phNumbers = new String[3];
+        String[] names = new String[3];
 
         int n = 3, i = 0;
 
@@ -102,81 +100,147 @@ public class Services extends AppCompatActivity {
                 cards1[i] = cursor.getString(6);
                 cards2[i] = cursor.getString(7);
                 phNumbers[i] = cursor.getString(8);
+                names[i] = cursor.getString(1) + " " + cursor.getString(2) + " " + cursor.getString(3);
             }
             cursor.moveToNext();
             i++;
         }
-        cursor.close();
-
-        cursor.close();
-
-
 
         tvBetween.setOnClickListener(v -> {
-
-        });
-
-        sep0.setOnClickListener(v -> {
-
+            Intent intent = new Intent(Services.this, BWYours.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("card", CARD);
+            startActivity(intent);
         });
 
         tvMobileNet.setOnClickListener(v -> {
-
-        });
-
-        sep1.setOnClickListener(v -> {
-
+            Intent intent = new Intent(Services.this, Transfer.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("card", CARD);
+            intent.putExtra("service", "mobile");
+            startActivity(intent);
         });
 
         tvCommunalServices.setOnClickListener(v -> {
-
-        });
-
-        sep2.setOnClickListener(v -> {
-
+            Intent intent = new Intent(Services.this, Transfer.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("card", CARD);
+            intent.putExtra("service", "communal");
+            startActivity(intent);
         });
 
         tvTransport.setOnClickListener(v -> {
-
-        });
-
-        sep3.setOnClickListener(v -> {
-
+            Intent intent = new Intent(Services.this, Transfer.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("card", CARD);
+            intent.putExtra("service", "transport");
+            startActivity(intent);
         });
 
         tvEducation.setOnClickListener(v -> {
-
-        });
-
-        sep4.setOnClickListener(v -> {
-
+            Intent intent = new Intent(Services.this, Transfer.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("card", CARD);
+            intent.putExtra("service", "education");
+            startActivity(intent);
         });
 
         tvTaxes.setOnClickListener(v -> {
-
-        });
-
-        sep5.setOnClickListener(v -> {
-
+            Intent intent = new Intent(Services.this, Transfer.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("card", CARD);
+            intent.putExtra("service", "taxes");
+            startActivity(intent);
         });
 
         tvHealth.setOnClickListener(v -> {
-
-        });
-
-        sep6.setOnClickListener(v -> {
-
+            Intent intent = new Intent(Services.this, Transfer.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("card", CARD);
+            intent.putExtra("service", "health");
+            startActivity(intent);
         });
 
         tvRecreation.setOnClickListener(v -> {
+            Intent intent = new Intent(Services.this, Transfer.class);
+            intent.putExtra("index", strInd);
+            intent.putExtra("card", CARD);
+            intent.putExtra("service", "recreation");
+            startActivity(intent);
+        });
 
+        phoneOrCardNumber.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(phoneOrCardNumber.getText().toString().length() > 10) {
+                    tv7.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    tv7.setVisibility(View.VISIBLE);
+                }
+
+                if(phoneOrCardNumber.getText().toString().length() == 10 || (phoneOrCardNumber.getText().toString().length() == 16)) {
+                    doTransfer.setVisibility(View.VISIBLE);
+                }
+                else {
+                    doTransfer.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
         });
 
         doTransfer.setOnClickListener(v -> {
-            if(phoneOrCardNumber.getText().toString().equals(""))
+            if(phoneOrCardNumber.getText().toString().equals("")) {
                 Toast.makeText(Services.this, "Введите номер телефона или карты", Toast.LENGTH_SHORT).show();
-            //else if()
+            }
+            else {
+                if(((phoneOrCardNumber.getText().toString().equals(cards1[0]) || phoneOrCardNumber.getText().toString().equals(cards1[1]) ||
+                        phoneOrCardNumber.getText().toString().equals(cards1[2]) || phoneOrCardNumber.getText().toString().equals(cards2[0]) ||
+                        phoneOrCardNumber.getText().toString().equals(cards2[1]) || phoneOrCardNumber.getText().toString().equals(cards2[2])) &&
+                        !phoneOrCardNumber.getText().toString().equals(CARD)) ||
+                        ((phoneOrCardNumber.getText().toString().equals(phNumbers[0]) || phoneOrCardNumber.getText().toString().equals(phNumbers[1]) ||
+                        phoneOrCardNumber.getText().toString().equals(phNumbers[2])) && !phoneOrCardNumber.getText().toString().equals(phNumbers[index])))
+                {
+                    Intent intent = new Intent(Services.this, ToWhom.class);
+                    if (phoneOrCardNumber.getText().toString().equals(cards1[0]) || phoneOrCardNumber.getText().toString().equals(cards2[0]) ||
+                            phoneOrCardNumber.getText().toString().equals(phNumbers[0]))
+                    {
+                        //Toast.makeText(Services.this, "Переведено на " + phoneOrCardNumber.getText().toString() + " на имя " + names[0], Toast.LENGTH_SHORT).show();
+                        intent.putExtra("recipient", "0");
+                    }
+                    else if (phoneOrCardNumber.getText().toString().equals(cards1[1]) || phoneOrCardNumber.getText().toString().equals(cards2[1]) ||
+                            phoneOrCardNumber.getText().toString().equals(phNumbers[1]))
+                    {
+                        //Toast.makeText(Services.this, "Переведено на " + phoneOrCardNumber.getText().toString() + " на имя " + names[1], Toast.LENGTH_SHORT).show();
+                        intent.putExtra("recipient", "1");
+                    }
+                    else if (phoneOrCardNumber.getText().toString().equals(cards1[2]) || phoneOrCardNumber.getText().toString().equals(cards2[2]) ||
+                            phoneOrCardNumber.getText().toString().equals(phNumbers[2]))
+                    {
+                        //Toast.makeText(Services.this, "Переведено на " + phoneOrCardNumber.getText().toString() + " на имя " + names[2], Toast.LENGTH_SHORT).show();
+                        intent.putExtra("recipient", "2");
+                    }
+                    intent.putExtra("card", CARD);
+                    intent.putExtra("index", strInd);
+                    intent.putExtra("value", phoneOrCardNumber.getText().toString());
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(Services.this, phoneOrCardNumber.getText().toString() + " не найдено", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
+
+
 
     }
 }

@@ -12,11 +12,4 @@
         android:layout_weight="1"
         android:text="Hello"/>
 
-    <ImageView
-        android:id="@+id/delete"
-        android:layout_width="43dp"
-        android:layout_height="42dp"
-        android:background="@drawable/delete"
-        android:contentDescription="@string/app_name" />
-
 </LinearLayout>

@@ -34,15 +34,18 @@ import java.util.HashMap;
 import java.util.Locale;
 
 public class MainScreen extends AppCompatActivity {
+    int index;
+
     Button btnFunc, btnSupport, btnHistory;
     TextView txtDeposits, txtLoans, txtSecurity, currency1, currency2,
-            tvCard1, tvCard2, tvBalance1, tvBalance2, tvWeather, tvName;
+            tvCard1, tvCard2, tvBalance1, tvBalance2, tvWeather, tvName, tvBuffer;
     ImageView ivWeather, miniHist, ivWeatherIcon;
-    ImageView dollar, euro, ivCurrency;
+    ImageView ivCurrency;
 
     private DBHelper mDBHelper;
     private SQLiteDatabase mDb;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,18 +66,13 @@ public class MainScreen extends AppCompatActivity {
         tvBalance2 = findViewById(R.id.balance2);
         ivWeather = findViewById(R.id.ivWeather);
         miniHist = findViewById(R.id.miniHistory);
+        tvBuffer = findViewById(R.id.buffer);
 
         currency1 = findViewById(R.id.currency1);
         currency2 = findViewById(R.id.currency2);
 
         ivCurrency = findViewById(R.id.Currency);
         ivWeatherIcon = findViewById(R.id.ivWeatherIcon);
-
-        /*usd = findViewById(R.id.USD);
-        eur = findViewById(R.id.EUR);
-
-        dollar = findViewById(R.id.Dollar);
-        euro = findViewById(R.id.Euro);*/
 
         mDBHelper = new DBHelper(this);
 
@@ -98,7 +96,7 @@ public class MainScreen extends AppCompatActivity {
         else
             strInd = "0";
 
-        int index = Integer.parseInt(strInd);
+        index = Integer.parseInt(strInd);
 
         String name, patronymic, surname, login, password, card1, card2,
                 phoneNum, pin1, pin2, cvv1, cvv2, balance1, balance2;
@@ -126,8 +124,6 @@ public class MainScreen extends AppCompatActivity {
         balance1 = String.valueOf(cursor.getDouble(13));
 
         balance2 = String.valueOf(cursor.getDouble(14));
-
-        cursor.close();
 
         tvName.setText(name);
 
@@ -200,125 +196,101 @@ public class MainScreen extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btnFunc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainScreen.this, Functions.class);
-                startActivity(intent);
-            }
+        btnFunc.setOnClickListener(view -> {
+            Intent intent = new Intent(MainScreen.this, Functions.class);
+            startActivity(intent);
         });
 
-        btnSupport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainScreen.this, Support.class);
-                startActivity(intent);
-            }
+        btnSupport.setOnClickListener(view -> {
+            Intent intent = new Intent(MainScreen.this, Support.class);
+            startActivity(intent);
         });
 
-        btnHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainScreen.this, History.class);
-                startActivity(intent);
-            }
+        btnHistory.setOnClickListener(view -> {
+            Intent intent = new Intent(MainScreen.this, History.class);
+            startActivity(intent);
         });
 
-        txtDeposits.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, DepositsAndInvestments.class);
-                startActivity(intent);
-            }
+        txtDeposits.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, DepositsAndInvestments.class);
+            startActivity(intent);
         });
 
-        txtLoans.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Credits.class);
-                startActivity(intent);
-            }
+        txtLoans.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Credits.class);
+            startActivity(intent);
         });
 
-        txtSecurity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Security.class);
-                startActivity(intent);
-            }
+        txtSecurity.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Security.class);
+            startActivity(intent);
         });
 
-        currency1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Currency.class);
-                startActivity(intent);
-            }
+        currency1.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Currency.class);
+            startActivity(intent);
         });
 
-        currency2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Currency.class);
-                startActivity(intent);
-            }
+        currency2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Currency.class);
+            startActivity(intent);
         });
 
-        ivCurrency.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Currency.class);
-                startActivity(intent);
-            }
+        ivCurrency.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Currency.class);
+            startActivity(intent);
         });
 
-        /*usd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Currency.class);
-                startActivity(intent);
-            }
+        ivWeather.setOnClickListener(v -> {
+            Intent intent = new Intent(MainScreen.this, Weather.class);
+            startActivity(intent);
         });
 
-        eur.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Currency.class);
-                startActivity(intent);
-            }
+        miniHist.setOnClickListener(view -> {
+            Intent intent = new Intent(MainScreen.this, MiniHistories.class);
+            startActivity(intent);
         });
 
-        dollar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Currency.class);
-                startActivity(intent);
-            }
-        });
+        cursor.close();
+    }
 
-        euro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Currency.class);
-                startActivity(intent);
-            }
-        });*/
+    @SuppressLint("SetTextI18n")
+    @Override
+    protected void onRestart() {
+        mDBHelper = new DBHelper(this);
 
-        ivWeather.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, Weather.class);
-                startActivity(intent);
-            }
-        });
+        try {
+            mDBHelper.updateDataBase();
+        } catch (IOException mIOException) {
+            throw new Error("UnableToUpdateDatabase");
+        }
 
-        miniHist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainScreen.this, MiniHistories.class);
-                startActivity(intent);
-            }
-        });
+        try {
+            mDb = mDBHelper.getWritableDatabase();
+        } catch (SQLException mSQLException) {
+            throw mSQLException;
+        }
+        Cursor cursor = mDb.rawQuery("SELECT * FROM Accounts", null);
+        cursor.move(index + 1);
+
+        String balance1 = String.valueOf(cursor.getDouble(13)),
+                balance2 = String.valueOf(cursor.getDouble(14));
+
+        tvBalance1.setText((balance1.length() > 3 ?
+                (balance1.contains(".") ?
+                        balance1.substring(0, balance1.length() - 5) + " "
+                                + balance1.substring(balance1.length() - 5) :
+                        balance1.substring(0, balance1.length() - 3) + " "
+                                + balance1.substring(balance1.length() - 3)) : balance1) + " ₽");
+
+        tvBalance2.setText((balance2.length() > 3 ?
+                (balance2.contains(".") ?
+                        balance2.substring(0, balance2.length() - 5) + " "
+                                + balance2.substring(balance2.length() - 5) :
+                        balance2.substring(0, balance2.length() - 3) + " "
+                                + balance2.substring(balance2.length() - 3)) : balance2) + " ₽");
+
+        super.onRestart();
     }
 
     private class getURLForCurrency extends AsyncTask<String, String, String>{
