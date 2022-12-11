@@ -49,8 +49,8 @@ public class DepositsAndInvestments extends AppCompatActivity {
         });
     }
     private void createCollection() {
-        String[] deposits = {"Вклад 1", "Вклад 2", "Вклад 3", "Вклад 4", "Вклад 5"};
-        String[] investments = {"Tesla", "Роснефть", "Яндекс"};
+        String[] deposits = {"Сберегательный\nПроцентная ставка: 2.5%\nБез возможности снятия и пополнения", "Накопительный\nПроцентная ставка: 3.0%\nСо снятием, без пополнения", "До востребования\nПроцентная ставка: 2.2%\nСо снятием и пополнением"};
+        String[] investments = {"Tesla\nМои акции: 103.2\nСуммарная стоимость(USD): 18 060", "Роснефть\nМои акции: 200.0\nСуммарная стоимость(RUB): 32 600", "Яндекс\nМои акции: 340.5\nСуммарная стоимость(RUB): 681 000"};
         tabConnection = new HashMap<String, List<String>>();
         for(String group: groupList)
         {

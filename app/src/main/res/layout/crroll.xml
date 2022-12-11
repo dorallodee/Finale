@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".NewsGolg"
+    tools:showIn="@layout/activity_news_golg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Заменят ли золотые слитки инвестиции в доллары"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="В марте 2022 года министр финансов РФ Антон Силуанов заявил, что на фоне нестабильной геополитической ситуации вложения в золото станут идеальной альтернативой покупке долларов. Он пояснял, что цена на золото подвержена краткосрочным колебаниям, но в долгосрочной перспективе вложения показывают свою прибыльность.
+
+При этом покупка и хранение валюты в этом году заметно осложнились.
+
+В марте Банк России ввел запрет на снятие с валютных вкладов наличных средств на сумму более $10 000. Если же вклад был открыт с 9 марта, снять с него средства можно только в рублях. Позднее регулятор продлил эти меры до марта 2023 г.
+
+В июне российские банки начали вводить комиссию за хранение валюты на счетах в размере от 0,1% до 1%. При этом многие крупные российские банки и брокеры стали отказываться от открытия накопительных счетов и вкладов в долларах и евро. Эксперты объясняли это решение невозможностью куда-либо вложить иностранную валюту, из-за чего хранение долларов и евро для банков становится невыгодным.
+
+Действуют ограничения и на покупку наличной валюты." />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Выгодно ли покупать золото в 2022 году"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="При этом условия для вложений в золото заметно улучшились.
+
+С 1 марта правительство отменило НДС при покупке инвестиционного золота (золотых слитков) для физических лиц. Ранее ставка налога составляла 20%, то есть при покупке граждане переплачивали пятую часть стоимости слитка, и при продаже золота эта переплата им не возвращалась."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Где и как купить физическое золото и что на нем написано"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Самый простой способ купить физическое золото — приобрести его в одном из банков. Далеко не все банки продают золотые слитки, но крупнейшие банки, как правило, золото в продаже имеют. При этом не все торгующие золотом банки публикуют цены на драгметалл на официальном сайте. Возможно, их придется уточнять в офисе. Некоторые банки продают слитки по предварительному заказу.
+
+Граждане могут приобрести слитки массой от 1 г до 13,3 кг. Обычно слитки имеют 999 пробу (то есть доля чистого золота в них — 99,9%). Слитки имеют маркировку, нумерацию, указание массы и товарный знак завода-производителя. При покупке золота выдается специальный сертификат. Купить слиток можно лично, предъявив паспорт.
+
+Купить слитки также можно у специализированных продавцов, которые имеют соответствующее свидетельство. Их список можно найти на сайте Федеральной пробирной палаты. Покупать золото у частных лиц с рук не рекомендуется из-за высоких рисков."/>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

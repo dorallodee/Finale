@@ -33,12 +33,13 @@
             android:layout_height="wrap_content"
             android:text="Возможные кредиты"
             android:textSize="20sp" />
+
         <ListView
+            android:id="@+id/list2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:dividerHeight="1dp"
-            android:id="@+id/list2"
-            tools:listitem="@layout/activity_listview2"/>
+            tools:listitem="@layout/activity_listview2" />
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
