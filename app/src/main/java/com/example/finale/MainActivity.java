@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
+    String[] logins = new String[3];
+    String[] passwords = new String[3];
+
     private EditText login, password;
 
     private DBHelper mDBHelper;
@@ -50,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
         String[] surname = new String[3];
         */
 
-        String[] logins = new String[3];
-        String[] passwords = new String[3];
+
 
         /*
         String[] card1 = new String[3];
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         // Отправляем запрос в БД
         Cursor cursor = mDb.rawQuery("SELECT * FROM Accounts", null);
         cursor.moveToFirst();
+
         int i = 0;
         // Пробегаем по всем клиентам
         while (!cursor.isAfterLast()) {
@@ -75,14 +78,18 @@ public class MainActivity extends AppCompatActivity {
             cursor.moveToNext();
             i++;
         }
-        cursor.close();
+
+        // ЧТОБЫ УЗНАТЬ, КАКИЕ ПАРОЛИ ДЛЯ ГРИШИ, ДАШИ И САШИБ РАСКОММЕНТИТЬ СТРОКУ НИЖЕ -
+        // В ТОСТЕ ПРИ ПЕРВОМ ЗАПУСКЕ ПОДРЯД БУДУТ ПАРОЛИ ЧЕРЕЗ ПРОБЕЛ
+        //Toast.makeText(this, passwords[0] + " " + passwords[1] + " " + passwords[2], Toast.LENGTH_SHORT).show();
 
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Refresh();
                 if (login.getText().toString().trim().equals(logins[0]) && password.getText().toString().trim().equals(passwords[0]))
                 {
-                    Toast.makeText(MainActivity.this, "Вы вошли в свой профиль, Гриша", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Вы вошли в свой профиль", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, MainScreen.class);
                     intent.putExtra("index", "0");
                     startActivity(intent);
@@ -91,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (login.getText().toString().trim().equals(logins[1]) && password.getText().toString().trim().equals(passwords[1]))
                 {
-                    Toast.makeText(MainActivity.this, "Вы вошли в свой профиль, Саша", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Вы вошли в свой профиль", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, MainScreen.class);
                     intent.putExtra("index", "1");
                     startActivity(intent);
@@ -100,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (login.getText().toString().trim().equals(logins[2]) && password.getText().toString().trim().equals(passwords[2]))
                 {
-                    Toast.makeText(MainActivity.this, "Вы вошли в свой профиль, Даша", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Вы вошли в свой профиль", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, MainScreen.class);
                     intent.putExtra("index", "2");
                     startActivity(intent);
@@ -127,5 +134,32 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    void Refresh(){
+        mDBHelper = new DBHelper(this);
+
+        try {
+            mDBHelper.updateDataBase();
+        } catch (IOException mIOException) {
+            throw new Error("UnableToUpdateDatabase");
+        }
+
+        try {
+            mDb = mDBHelper.getWritableDatabase();
+        } catch (SQLException mSQLException) {
+            throw mSQLException;
+        }
+
+        Cursor cursor = mDb.rawQuery("SELECT * FROM Accounts", null);
+        cursor.moveToFirst();
+
+        int i = 0;
+        // Пробегаем по всем клиентам
+        while (!cursor.isAfterLast()) {
+            passwords[i] = cursor.getString(5);
+            cursor.moveToNext();
+            i++;
+        }
     }
 }

@@ -223,6 +223,7 @@ public class MainScreen extends AppCompatActivity {
 
         txtSecurity.setOnClickListener(v -> {
             Intent intent = new Intent(MainScreen.this, Security.class);
+            intent.putExtra("index", strInd);
             startActivity(intent);
         });
 
