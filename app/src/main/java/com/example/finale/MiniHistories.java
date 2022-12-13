@@ -3,16 +3,19 @@ package com.example.finale;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MiniHistories extends AppCompatActivity implements View.OnTouchListener {
 
     ImageView iv;
+    TextView tview;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -21,6 +24,7 @@ public class MiniHistories extends AppCompatActivity implements View.OnTouchList
         iv = new ImageView(this);
         iv.setOnTouchListener(this); // для обработки касаний
         setContentView(R.layout.activity_mini_histories);
+        tview = findViewById(R.id.readmore);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -28,6 +32,10 @@ public class MiniHistories extends AppCompatActivity implements View.OnTouchList
                 finish();
             }
         }, 3000);
+        tview.setOnClickListener(view -> {
+            Intent intent = new Intent(MiniHistories.this, NewsGolg.class);
+            startActivity(intent);
+        });
     }
 
     @SuppressLint("ClickableViewAccessibility")

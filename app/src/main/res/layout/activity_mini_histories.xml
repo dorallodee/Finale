@@ -9,21 +9,33 @@
 
     <TextView
         android:id="@+id/textinnews"
+
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#f0a3f8"
+        android:background="#9939DC62"
         android:fontFamily="sans-serif-medium"
         android:text="@string/fornews"
-        android:textAlignment="center"
-
-        android:textColor="@color/purple_700"
-        android:textSize="30sp"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="40sp"
         tools:ignore="InvalidId" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/interactive_garry"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
-        android:src="@drawable/garry" />
+        android:layout_height="360dp"
+        android:layout_marginTop="300dp"
+        android:src="@drawable/tree" />
+
+    <TextView
+        android:id="@+id/readmore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="680dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:text="Читать больше"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="30sp" />
 </FrameLayout>
