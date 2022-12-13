@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         // ЧТОБЫ УЗНАТЬ, КАКИЕ ПАРОЛИ ДЛЯ ГРИШИ, ДАШИ И САШИБ РАСКОММЕНТИТЬ СТРОКУ НИЖЕ -
         // В ТОСТЕ ПРИ ПЕРВОМ ЗАПУСКЕ ПОДРЯД БУДУТ ПАРОЛИ ЧЕРЕЗ ПРОБЕЛ
-        //Toast.makeText(this, passwords[0] + " " + passwords[1] + " " + passwords[2], Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, passwords[0] + " " + passwords[1] + " " + passwords[2], Toast.LENGTH_SHORT).show();
 
         but1.setOnClickListener(new View.OnClickListener() {
             @Override

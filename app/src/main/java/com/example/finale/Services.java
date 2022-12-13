@@ -39,7 +39,6 @@ public class Services extends AppCompatActivity {
         tvTaxes = findViewById(R.id.taxes);
         tvHealth = findViewById(R.id.health);
         tvRecreation = findViewById(R.id.recreation);
-        tv7 = findViewById(R.id.id7);
 
         phoneOrCardNumber = findViewById(R.id.phoneOrCardNumber);
 
