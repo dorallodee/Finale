@@ -1,10 +1,7 @@
 package com.example.finale;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -43,14 +40,13 @@ public class Card1 extends AppCompatActivity {
         Bundle arguments = getIntent().getExtras();
         String strInd, name, patronymic, surname;
 
-        if(arguments != null){
+        if (arguments != null) {
             strInd = arguments.get("index").toString();
             name = arguments.get("name").toString();
             patronymic = arguments.get("patronymic").toString();
             surname = arguments.get("surname").toString();
             card = arguments.get("card").toString();
-        }
-        else{
+        } else {
             strInd = "0";
             name = "0";
             patronymic = "0";
@@ -78,7 +74,7 @@ public class Card1 extends AppCompatActivity {
         cursor.move(index + 1);
         String balance = String.valueOf(cursor.getDouble(13));
 
-        tvCardNum.setText(card.substring(0, 4) + " " +card.substring(4, 8) + " " +card.substring(8, 12) + " " + card.substring(12) );
+        tvCardNum.setText(card.substring(0, 4) + " " + card.substring(4, 8) + " " + card.substring(8, 12) + " " + card.substring(12));
 
         tvFullName.setText(name + " " + patronymic + " " + surname);
 

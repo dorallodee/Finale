@@ -7,6 +7,7 @@
     android:fillViewport="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Credits"
+    android:background="@drawable/background_list"
     tools:showIn="@layout/activity_credits">
 
 
@@ -19,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Мои кредиты"
+            android:background="@drawable/background_list"
             android:textSize="20sp" />
 
         <ListView
@@ -26,18 +28,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:dividerHeight="1dp"
+            android:background="@drawable/background_list"
             tools:listitem="@layout/activity_listview" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Возможные кредиты"
+            android:background="@drawable/background_list"
             android:textSize="20sp" />
 
         <ListView
             android:id="@+id/list2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/background_list"
             android:dividerHeight="1dp"
             tools:listitem="@layout/activity_listview2" />
     </LinearLayout>

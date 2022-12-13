@@ -20,26 +20,24 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="#7C80EF"
+            android:backgroundTint="#D5B4FF"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
             <ImageView
-                android:layout_width="120dp"
-                android:layout_height="108dp"
-                android:layout_marginLeft="260dp"
-                android:layout_marginTop="62dp"
-                android:src="@drawable/money" />
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/money_vklad" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="#8F0E1E25"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen.PopupOverlay" />
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="300dp"
+                android:layout_height="160dp"
+                app:srcCompat="@drawable/my_vklad" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -55,33 +53,5 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Мои вклады и акции"
-        android:textAlignment="textStart"
-        android:textColor="#DCCECE"
-        android:textSize="24sp"
-        app:layout_anchor="@+id/app_bar"
-        app:layout_anchorGravity="top|center" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-<!--<?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-
-    <ExpandableListView
-        android:id="@+id/elvMobile"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-    </ExpandableListView>
-
-
-</LinearLayout>-->
