@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#9939DC62"
+    android:orientation="vertical"
     tools:context=".MiniHistories">
 
     <TextView
         android:id="@+id/textinnews"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="230dp"
+        android:background="@drawable/chto"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/fornews"
         android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="40sp"
@@ -31,9 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="680dp"
-        android:backgroundTint="#FFFFFF"
-        android:fontFamily="sans-serif-medium"
-        android:text="Читать больше"
+        android:background="@drawable/read"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="30sp" />

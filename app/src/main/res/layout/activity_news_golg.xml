@@ -24,14 +24,24 @@
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="205dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="70dp"
+                    app:srcCompat="@drawable/chto_2" />
+
+
                 <pl.droidsonroids.gif.GifImageButton
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="280dp"
+                    android:layout_marginLeft="60dp"
                     android:layout_marginTop="60dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/nice_duck"
@@ -49,16 +59,6 @@
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
+
     <include layout="@layout/crroll" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/fornews"
-        android:textSize="20sp"
-        app:layout_anchor="@+id/app_bar2"
-        app:layout_anchorGravity="center" />
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
