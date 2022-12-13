@@ -17,6 +17,6 @@ public class StartingScreen extends AppCompatActivity {
             public void run() {
                 finish();
             }
-        }, 850);
+        }, 1500);
     }
 }

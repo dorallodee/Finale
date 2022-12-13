@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".MiniHistories">
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/pinguin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/pinguin" />
+        android:layout_height="399dp"
+        android:layout_gravity="center"
+        android:src="@drawable/starting" />
 </FrameLayout>
