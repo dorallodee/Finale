@@ -22,7 +22,7 @@ public class ToWhom extends AppCompatActivity {
 
     String[] balances = new String[2];
     int index, getter, from, to;
-    TextView tvBalance1,tvCard1, tvCard2, tvBuffer1, tvBuffer2; //tvBalance2
+    TextView tvBalance1,tvCard1, tvCard2, tvBuffer1, tvBuffer2, tvLabelTransfer; //tvBalance2
     EditText etMoney;
     Button transfer;
 
@@ -38,9 +38,9 @@ public class ToWhom extends AppCompatActivity {
         tvBuffer1 = findViewById(R.id.buffer1);
         tvBuffer2 = findViewById(R.id.buffer2);
         tvBalance1 = findViewById(R.id.balance1);
-        //tvBalance2 = findViewById(R.id.balance2);
         tvCard1 = findViewById(R.id.cardNum1);
         tvCard2 = findViewById(R.id.cardNum2);
+        tvLabelTransfer = findViewById(R.id.labelTransfer);
 
         etMoney = findViewById(R.id.money);
         transfer = findViewById(R.id.transfer);
@@ -99,6 +99,7 @@ public class ToWhom extends AppCompatActivity {
 
         cursor = mDb.rawQuery("SELECT * FROM Accounts", null);
         cursor.move(getter + 1);
+        tvLabelTransfer.setText("Перевод на имя " + cursor.getString(3) + cursor.getString(1).substring(0,1) + ". " + cursor.getString(2).substring(0,1) + ".");
         if (value.equals(cursor.getString(6)) || value.equals(cursor.getString(8))){
             balances[1] = cursor.getString(13);
             tvCard2.setText(cursor.getString(6));

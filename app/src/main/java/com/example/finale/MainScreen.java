@@ -51,9 +51,9 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_sreen);
 
-        btnFunc = findViewById(R.id.buttonFunc);
+        /*btnFunc = findViewById(R.id.buttonFunc);
         btnSupport = findViewById(R.id.buttonSupport);
-        btnHistory = findViewById(R.id.buttonHistory);
+        btnHistory = findViewById(R.id.buttonHistory);*/
 
         txtDeposits = findViewById(R.id.depositsAndInvestmentsText);
         txtLoans = findViewById(R.id.loansText);
@@ -66,7 +66,7 @@ public class MainScreen extends AppCompatActivity {
         tvBalance2 = findViewById(R.id.balance2);
         ivWeather = findViewById(R.id.ivWeather);
         miniHist = findViewById(R.id.miniHistory);
-        tvBuffer = findViewById(R.id.buffer);
+        //tvBuffer = findViewById(R.id.buffer);
 
         currency1 = findViewById(R.id.currency1);
         currency2 = findViewById(R.id.currency2);
@@ -125,7 +125,7 @@ public class MainScreen extends AppCompatActivity {
 
         balance2 = String.valueOf(cursor.getDouble(14));
 
-        tvName.setText(name);
+        tvName.setText("Добрый день, " + name);
 
         tvCard1.setText("Карта ···· " + card1.substring(card1.length() - 4));
 
@@ -145,12 +145,12 @@ public class MainScreen extends AppCompatActivity {
                         balance2.substring(0, balance2.length() - 3) + " "
                                 + balance2.substring(balance2.length() - 3)) : balance2) + " ₽");
 
-        String URLCurrency = "https://cdn.cur.su/api/cbr.json";
-        new getURLForCurrency().execute(URLCurrency);
+        //String URLCurrency = "https://cdn.cur.su/api/cbr.json";
+        //new getURLForCurrency().execute(URLCurrency);
 
         String key = "771f71c52bc5003a745ac9074cdb920f";
-        //String URLWeather = "https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=" + key + "&units=metric";
-        //new getURLForWeather().execute(URLWeather);
+        String URLWeather = "https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=" + key + "&units=metric";
+        new getURLForWeather().execute(URLWeather);
 
         tvBalance1.setOnClickListener(v -> {
             Intent intent = new Intent(MainScreen.this, Card1.class);
@@ -196,7 +196,7 @@ public class MainScreen extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btnFunc.setOnClickListener(view -> {
+        /*btnFunc.setOnClickListener(view -> {
             Intent intent = new Intent(MainScreen.this, Functions.class);
             startActivity(intent);
         });
@@ -209,7 +209,7 @@ public class MainScreen extends AppCompatActivity {
         btnHistory.setOnClickListener(view -> {
             Intent intent = new Intent(MainScreen.this, History.class);
             startActivity(intent);
-        });
+        });*/
 
         txtDeposits.setOnClickListener(v -> {
             Intent intent = new Intent(MainScreen.this, DepositsAndInvestments.class);
@@ -418,6 +418,8 @@ public class MainScreen extends AppCompatActivity {
                     ivWeatherIcon.setBackgroundResource(R.drawable.partly_cloudly);
                 else if(obj.getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                     ivWeatherIcon.setBackgroundResource(R.drawable.fog);
+                else if(obj.getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                    ivWeatherIcon.setBackgroundResource(R.drawable.snow);
                 tvWeather.setText(((int)obj.getJSONObject("main").getDouble("temp") + "°"));
 
             } catch (JSONException e) {

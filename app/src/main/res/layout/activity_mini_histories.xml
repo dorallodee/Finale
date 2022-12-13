@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#9939DC62"
     tools:context=".MiniHistories">
 
     <TextView
         android:id="@+id/textinnews"
-
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#9939DC62"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:text="@string/fornews"
         android:textAlignment="viewStart"

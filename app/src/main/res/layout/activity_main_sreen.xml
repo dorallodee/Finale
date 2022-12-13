@@ -11,6 +11,19 @@
     tools:layout_editor_absoluteY="-2dp">
 
 
+    <TextView
+        android:id="@+id/tvPoweredBy2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/bottomSentence"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/Currency"
@@ -32,28 +45,29 @@
         android:layout_height="30dp"
         android:layout_marginTop="13dp"
         android:gravity="center"
-        android:hint="@string/connecting"
+        android:hint="1 USD = 62.77 RUB"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
+        app:layout_constraintVertical_bias="0.609" />
 
     <TextView
         android:id="@+id/currency2"
         android:layout_width="124dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="4dp"
         android:gravity="center"
-        android:hint="@string/connecting"
+        android:hint="1 EUR = 66.27 RUB"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669" />
+        app:layout_constraintVertical_bias="0.667" />
 
     <Button
         android:id="@+id/securityText"
@@ -132,7 +146,8 @@
     <TextView
         android:id="@+id/card2"
         android:layout_width="150dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
         android:backgroundTint="#FFFFFF"
         android:hint="@string/card2"
         android:textSize="14sp"
@@ -142,12 +157,12 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <TextView
         android:id="@+id/card1"
         android:layout_width="150dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
         android:hint="@string/card1"
         android:textSize="14sp"
@@ -157,12 +172,12 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
+        app:layout_constraintVertical_bias="0.409" />
 
     <TextView
         android:id="@+id/balance1"
         android:layout_width="150dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:backgroundTint="#FFFFFF"
         android:hint="@string/balance1"
@@ -173,13 +188,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.378" />
 
     <TextView
         android:id="@+id/balance2"
         android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:backgroundTint="#FFFFFF"
         android:hint="@string/balance2"
         android:textSize="20sp"
@@ -189,7 +204,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459" />
+        app:layout_constraintVertical_bias="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -221,8 +236,8 @@
 
     <ImageView
         android:id="@+id/ivWeather"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.845"
@@ -234,22 +249,23 @@
 
     <TextView
         android:id="@+id/tvWeather"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="4dp"
         android:gravity="center"
         android:shadowColor="@color/black"
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="1"
-        android:text=""
+        android:text="7"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintHorizontal_bias="0.825"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.167" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -277,19 +293,19 @@
 
     <TextView
         android:id="@+id/_name"
-        android:layout_width="78dp"
-        android:layout_height="18dp"
+        android:layout_width="123dp"
+        android:layout_height="43dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="5dp"
         android:background="#F9FAFA"
-        android:hint="@string/name"
+        android:text="Добрый день, Вафля"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.056" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

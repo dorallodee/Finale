@@ -42,6 +42,16 @@
     <string name="MSC">Москва</string>
     <string-array name="currency">
         <item>AUD</item>
+        <item>BYN</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>JPY</item>
+        <item>PLN</item>
+        <item>RUB</item>
+        <item>UAH</item>
+        <item>USD</item>
+        <!--
+        <item>AUD</item>
         <item>AZN</item>
         <item>AMD</item>
         <item>BYN</item>
@@ -76,6 +86,7 @@
         <item>USD</item>
         <item>UZS</item>
         <item>ZAR</item>
+        !-->
     </string-array>
     <string name="title_activity_deposits_and_investment">DepositsAndInvestment</string>
     <string name="large_text">

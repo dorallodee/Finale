@@ -277,6 +277,8 @@ public class Weather extends AppCompatActivity {
                                 icon1.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon1.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                icon1.setBackgroundResource(R.drawable.snow);
                             wind1.setText(obj.getJSONArray("list").getJSONObject(i).getJSONObject("wind").getDouble("speed") + "\nм/с");
                             break;
                         }
@@ -294,6 +296,8 @@ public class Weather extends AppCompatActivity {
                                 icon2.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon2.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                icon2.setBackgroundResource(R.drawable.snow);
                             wind2.setText(obj.getJSONArray("list").getJSONObject(i).getJSONObject("wind").getDouble("speed") + "\nм/с");
                             break;
                         }
@@ -311,6 +315,8 @@ public class Weather extends AppCompatActivity {
                                 icon3.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon3.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                icon3.setBackgroundResource(R.drawable.snow);
                             wind3.setText(obj.getJSONArray("list").getJSONObject(i).getJSONObject("wind").getDouble("speed") + "\nм/с");
                             break;
                         }
@@ -328,6 +334,8 @@ public class Weather extends AppCompatActivity {
                                 icon4.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon4.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                icon4.setBackgroundResource(R.drawable.snow);
                             wind4.setText(obj.getJSONArray("list").getJSONObject(i).getJSONObject("wind").getDouble("speed") + "\nм/с");
                             break;
                         }
@@ -345,6 +353,8 @@ public class Weather extends AppCompatActivity {
                                 icon5.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon5.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                icon5.setBackgroundResource(R.drawable.snow);
                             wind5.setText(obj.getJSONArray("list").getJSONObject(i).getJSONObject("wind").getDouble("speed") + "\nм/с");
                             break;
                         }
@@ -362,6 +372,8 @@ public class Weather extends AppCompatActivity {
                                 icon6.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon6.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                icon6.setBackgroundResource(R.drawable.snow);
                             wind6.setText(obj.getJSONArray("list").getJSONObject(i).getJSONObject("wind").getDouble("speed") + "\nм/с");
                             break;
                         }
@@ -379,6 +391,8 @@ public class Weather extends AppCompatActivity {
                                 icon7.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon7.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                icon7.setBackgroundResource(R.drawable.snow);
                             wind7.setText(obj.getJSONArray("list").getJSONObject(i).getJSONObject("wind").getDouble("speed") + "\nм/с");
                             break;
                         }
@@ -396,6 +410,8 @@ public class Weather extends AppCompatActivity {
                                 icon8.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 icon8.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                icon8.setBackgroundResource(R.drawable.snow);
                             wind8.setText(obj.getJSONArray("list").getJSONObject(i).getJSONObject("wind").getDouble("speed") + "\nм/с");
                             break;
                         }
@@ -426,6 +442,9 @@ public class Weather extends AppCompatActivity {
                                 iconDay1.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 iconDay1.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                iconDay1.setBackgroundResource(R.drawable.snow);
+
                         }
                         else if((i - start) == 10){
                             if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("scattered clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("broken clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("overcast clouds"))
@@ -438,6 +457,8 @@ public class Weather extends AppCompatActivity {
                                 iconDay2.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 iconDay2.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                iconDay2.setBackgroundResource(R.drawable.snow);
                         }
                         else if((i - start) == 15){
                             if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("scattered clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("broken clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("overcast clouds"))
@@ -450,6 +471,8 @@ public class Weather extends AppCompatActivity {
                                 iconDay3.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 iconDay3.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                iconDay3.setBackgroundResource(R.drawable.snow);
                         }
                         else if((i - start) == 20){
                             if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("scattered clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("broken clouds") || obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description").toLowerCase().contains("overcast clouds"))
@@ -462,6 +485,8 @@ public class Weather extends AppCompatActivity {
                                 iconDay4.setBackgroundResource(R.drawable.partly_cloudly);
                             else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("fog"))
                                 iconDay4.setBackgroundResource(R.drawable.fog);
+                            else if(obj.getJSONArray("list").getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("main").toLowerCase().contains("snow"))
+                                iconDay4.setBackgroundResource(R.drawable.snow);
                         }
                     }
 
@@ -477,10 +502,27 @@ public class Weather extends AppCompatActivity {
                 tvDayTemp3.setText("Днем " + Max[2] + "°\n" + "Ночью " + Min[2] + "°");
                 tvDay4.setText((obj.getJSONArray("list").getJSONObject(start + 24).getString("dt_txt").substring(0, 10).substring(8, 10)) + "." + (obj.getJSONArray("list").getJSONObject(0).getString("dt_txt").substring(0, 10).substring(5, 7)));
                 tvDayTemp4.setText("Днем " + Max[3] + "°\n" + "Ночью " + Min[3] + "°");
-                tvDay1Humidity.setText(Hum[0]/8 + "%");
-                tvDay2Humidity.setText(Hum[1]/8 + "%");
-                tvDay3Humidity.setText(Hum[2]/8 + "%");
-                tvDay4Humidity.setText(Hum[3]/8 + "%");
+
+                if(Hum[0]/8 > 100)
+                    tvDay1Humidity.setText(99 + "%");
+                else
+                    tvDay1Humidity.setText(Hum[0]/8 + "%");
+
+                if(Hum[1]/8 > 100)
+                    tvDay2Humidity.setText(99 + "%");
+                else
+                    tvDay2Humidity.setText(Hum[1]/8 + "%");
+
+                if(Hum[2]/8 > 100)
+                    tvDay3Humidity.setText(99 + "%");
+                else
+                    tvDay3Humidity.setText(Hum[2]/8 + "%");
+
+                if(Hum[3]/8 > 100)
+                    tvDay4Humidity.setText(99 + "%");
+                else
+                    tvDay4Humidity.setText(Hum[3]/8 + "%");
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

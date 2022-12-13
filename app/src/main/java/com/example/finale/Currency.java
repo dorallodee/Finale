@@ -32,11 +32,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Currency extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    int tvBuf;
+    double[] currency = new double[9];
     double smt;
+
     String buf;
     Spinner spinner11, spinner12, spinner21, spinner22;
-    TextView tv1, tv2;
+    TextView
+            tv1, tv2;
     EditText ed1;
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnDot, btnDelete, btn;
 
@@ -46,6 +48,17 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
         setContentView(R.layout.activity_currency);
 
         String URL = "https://cdn.cur.su/api/cbr.json";
+
+
+        currency[0] = 42.14;
+        currency[1] = 25.23;
+        currency[2] = 66.27;
+        currency[3] = 77.17;
+        currency[4] = 0.46;
+        currency[5] = 14.15;
+        currency[6] = 1;
+        currency[7] = 1.7;
+        currency[8] = 62.77;
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.currency,  android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -86,15 +99,42 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
 
             @Override
             public void afterTextChanged(Editable s) {
-                new Currency.getURL().execute(URL);
+                //new Currency.getURL().execute(URL);
+                if(!ed1.getText().toString().isEmpty()){
+                    if (ed1.getText().toString().equals("."))
+                        return;
+                    else if(ed1.getText().toString().toCharArray()[ed1.getText().toString().trim().length() - 1] == '.' && !ed1.getText().toString().equals("\\.")) {
+                        String buf = ed1.getText().toString().substring(0, ed1.getText().toString().length() - 1);
+                        tv2.setText(String.valueOf(BigDecimal.valueOf(Double.parseDouble(buf) * currency[spinner21.getSelectedItemPosition()] / currency[spinner22.getSelectedItemPosition()]).setScale(2, RoundingMode.HALF_UP)));
+                    }
+                    else
+                        tv2.setText(String.valueOf(BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * currency[spinner21.getSelectedItemPosition()] / currency[spinner22.getSelectedItemPosition()]).setScale(2, RoundingMode.HALF_UP)));
+                }
+                else{
+                    tv2.setText(String.valueOf(BigDecimal.valueOf(currency[spinner21.getSelectedItemPosition()] / currency[spinner22.getSelectedItemPosition()]).setScale(2, RoundingMode.HALF_UP)));
+                }
             }
         });
 
         spinner21.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                tvBuf = 2;
-                new Currency.getURL().execute(URL);
+                //new Currency.getURL().execute(URL);
+
+                if(!ed1.getText().toString().isEmpty()){
+                    if (ed1.getText().toString().equals("."))
+                        return;
+                    else if(ed1.getText().toString().toCharArray()[ed1.getText().toString().trim().length() - 1] == '.' && !ed1.getText().toString().equals("\\.")) {
+                        String buf = ed1.getText().toString().substring(0, ed1.getText().toString().length() - 1);
+                        tv2.setText(String.valueOf(BigDecimal.valueOf(Double.parseDouble(buf) * currency[spinner21.getSelectedItemPosition()] / currency[spinner22.getSelectedItemPosition()]).setScale(2, RoundingMode.HALF_UP)));
+                    }
+                    else
+                        tv2.setText(String.valueOf(BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * currency[spinner21.getSelectedItemPosition()] / currency[spinner22.getSelectedItemPosition()]).setScale(2, RoundingMode.HALF_UP)));
+                }
+                else{
+                    tv2.setText(String.valueOf(BigDecimal.valueOf(currency[spinner21.getSelectedItemPosition()] / currency[spinner22.getSelectedItemPosition()]).setScale(2, RoundingMode.HALF_UP)));
+                }
+
             }
 
             @Override
@@ -106,8 +146,21 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
         spinner22.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                tvBuf = 2;
-                new Currency.getURL().execute(URL);
+                //new Currency.getURL().execute(URL);
+
+                if(!ed1.getText().toString().isEmpty()){
+                    if (ed1.getText().toString().equals("."))
+                        return;
+                    else if(ed1.getText().toString().toCharArray()[ed1.getText().toString().trim().length() - 1] == '.' && !ed1.getText().toString().equals("\\.")) {
+                        String buf = ed1.getText().toString().substring(0, ed1.getText().toString().length() - 1);
+                        tv2.setText(String.valueOf(BigDecimal.valueOf(Double.parseDouble(buf) * currency[spinner21.getSelectedItemPosition()] / currency[spinner22.getSelectedItemPosition()]).setScale(2, RoundingMode.HALF_UP)));
+                    }
+                    else
+                        tv2.setText(String.valueOf(BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * currency[spinner21.getSelectedItemPosition()] / currency[spinner22.getSelectedItemPosition()]).setScale(2, RoundingMode.HALF_UP)));
+                }
+                else{
+                    tv2.setText(String.valueOf(BigDecimal.valueOf(currency[spinner21.getSelectedItemPosition()] / currency[spinner22.getSelectedItemPosition()]).setScale(2, RoundingMode.HALF_UP)));
+                }
             }
 
             @Override
@@ -291,21 +344,19 @@ public class Currency extends AppCompatActivity implements AdapterView.OnItemSel
         @SuppressLint("SetTextI18n")
         protected void onPostExecute(String result){
             super.onPostExecute(result);
-
-            try {
-                JSONObject obj = new JSONObject(result);
-                if(!ed1.getText().toString().isEmpty()){
-                    if(!ed1.getText().toString().trim().isEmpty() && ed1.getText().toString().trim().toCharArray()[ed1.getText().toString().trim().length() - 1] == '.')
-                        if(ed1.getText().toString().trim().isEmpty()){
-                            tv2.setText(BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(2, RoundingMode.HALF_UP).toString());
-                        }
-                    tv2.setText(String.valueOf(BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP)));
-                }
-                else
-                    tv2.setText(String.valueOf(BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(2, RoundingMode.HALF_UP)));
-            } catch (JSONException e) {
-                e.printStackTrace();
+            //JSONObject obj = new JSONObject(result);
+            if(!ed1.getText().toString().isEmpty()){
+                if(!ed1.getText().toString().trim().isEmpty() && ed1.getText().toString().trim().toCharArray()[ed1.getText().toString().trim().length() - 1] == '.')
+                    if(ed1.getText().toString().trim().isEmpty()){
+                        tv2.setText(String.valueOf(currency[spinner22.getSelectedItemPosition()] / currency[spinner21.getSelectedItemPosition()]));
+                        //tv2.setText(BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(2, RoundingMode.HALF_UP).toString());
+                    }
+                tv2.setText(String.valueOf(Double.parseDouble(ed1.getText().toString()) * currency[spinner22.getSelectedItemPosition()] / currency[spinner21.getSelectedItemPosition()]));
+                //tv2.setText(String.valueOf(BigDecimal.valueOf(Double.parseDouble(ed1.getText().toString()) * obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(4, RoundingMode.HALF_UP)));
             }
+            else
+                tv2.setText("213000");
+            //tv2.setText(String.valueOf(BigDecimal.valueOf(obj.getJSONObject("rates").getDouble(spinner22.getSelectedItem().toString()) / obj.getJSONObject("rates").getDouble(spinner21.getSelectedItem().toString())).setScale(2, RoundingMode.HALF_UP)));
         }
     }
 }
