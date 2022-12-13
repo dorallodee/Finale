@@ -50,11 +50,6 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_sreen);
-
-        btnFunc = findViewById(R.id.buttonFunc);
-        btnSupport = findViewById(R.id.buttonSupport);
-        btnHistory = findViewById(R.id.buttonHistory);
-
         txtDeposits = findViewById(R.id.depositsAndInvestmentsText);
         txtLoans = findViewById(R.id.loansText);
         txtSecurity = findViewById(R.id.securityText);
@@ -193,21 +188,6 @@ public class MainScreen extends AppCompatActivity {
             intent.putExtra("surname", surname);
             intent.putExtra("card", card2);
             intent.putExtra("balance", balance2);
-            startActivity(intent);
-        });
-
-        btnFunc.setOnClickListener(view -> {
-            Intent intent = new Intent(MainScreen.this, Functions.class);
-            startActivity(intent);
-        });
-
-        btnSupport.setOnClickListener(view -> {
-            Intent intent = new Intent(MainScreen.this, Support.class);
-            startActivity(intent);
-        });
-
-        btnHistory.setOnClickListener(view -> {
-            Intent intent = new Intent(MainScreen.this, History.class);
             startActivity(intent);
         });
 
