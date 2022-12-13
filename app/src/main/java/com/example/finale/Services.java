@@ -176,13 +176,6 @@ public class Services extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(phoneOrCardNumber.getText().toString().length() > 10) {
-                    tv7.setVisibility(View.INVISIBLE);
-                }
-                else {
-                    tv7.setVisibility(View.VISIBLE);
-                }
-
                 if(phoneOrCardNumber.getText().toString().length() == 10 || (phoneOrCardNumber.getText().toString().length() == 16)) {
                     doTransfer.setVisibility(View.VISIBLE);
                 }

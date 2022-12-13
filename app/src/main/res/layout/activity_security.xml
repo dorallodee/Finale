@@ -5,12 +5,14 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_baza"
     tools:context=".Security">
 
     <Button
         android:id="@+id/btnChange"
-        android:layout_width="250dp"
-        android:layout_height="59dp"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_perevod_light"
         android:text="Сменить"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@drawable/background_baza"
     tools:context=".Credits">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -40,14 +41,6 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen.PopupOverlay" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Мои вклады и акции"
-                android:textAlignment="textStart"
-                android:textColor="#DCCECE"
-                android:textSize="24sp" />
-
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -61,6 +54,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Мои вклады и акции"
+        android:textAlignment="textStart"
+        android:textColor="#DCCECE"
+        android:textSize="24sp"
+        app:layout_anchor="@+id/app_bar"
+        app:layout_anchorGravity="top|center" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
