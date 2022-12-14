@@ -21,7 +21,7 @@
         <entry key="app/src/main/res/layout/activity_blank_for_mini_histories.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_bw_yours.xml" value="0.30512820512820515" />
         <entry key="app/src/main/res/layout/activity_card1.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_credits.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_credits.xml" value="0.183990478515625" />
         <entry key="app/src/main/res/layout/activity_currency.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_deposits_and_investment.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/activity_deposits_and_investments.xml" value="0.24945068359375" />
@@ -33,8 +33,8 @@
         <entry key="app/src/main/res/layout/activity_listview2.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/activity_loans.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.26851851851851855" />
-        <entry key="app/src/main/res/layout/activity_main_sreen.xml" value="0.20568909821686926" />
-        <entry key="app/src/main/res/layout/activity_mini_histories.xml" value="0.22247772216796877" />
+        <entry key="app/src/main/res/layout/activity_main_sreen.xml" value="0.2724624633789063" />
+        <entry key="app/src/main/res/layout/activity_mini_histories.xml" value="0.13900756835937517" />
         <entry key="app/src/main/res/layout/activity_news_golg.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_security.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_services.xml" value="0.30512820512820515" />
