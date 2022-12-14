@@ -22,7 +22,7 @@ public class MiniHistories extends AppCompatActivity implements View.OnTouchList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         iv = new ImageView(this);
-        iv.setOnTouchListener(this); // для обработки касаний
+        iv.setOnTouchListener(this);
         setContentView(R.layout.activity_mini_histories);
         tview = findViewById(R.id.readmore);
 
@@ -43,7 +43,7 @@ public class MiniHistories extends AppCompatActivity implements View.OnTouchList
     public boolean onTouch(View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) { // нажатие
                 try {
-                    Thread.sleep(10000); // тут нужно будет подобрать функцию для задержки экрана
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
