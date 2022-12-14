@@ -725,8 +725,8 @@
 
     <TextView
         android:id="@+id/tvInfo"
-        android:layout_width="200dp"
-        android:layout_height="123dp"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="50sp"
         android:layout_marginEnd="13dp"
         android:gravity="start"

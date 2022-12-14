@@ -29,12 +29,12 @@
     <TextView
         android:id="@+id/readmore"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="680dp"
-        android:background="@drawable/read"
-        android:scaleX="1.5"
-        android:scaleY="1.8"
+        android:layout_height="50dp"
+        android:layout_marginTop="690dp"
+        android:scaleX="1.3"
+        android:scaleY="1.4"
+        android:text="Читать больше"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textSize="30sp" />
+        android:textSize="18sp" />
 </FrameLayout>
