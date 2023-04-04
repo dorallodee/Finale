@@ -1,34 +1,24 @@
-# Finale
+# Мобильное банковское приложение
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## О проекте
 Проект сделан в процессе прохождения курса "Технология разработки программных приложений" РТУ МИРЭА.
+
 В состав команды входят:
-`github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-### Built With
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
+* Пеньшина Дарья Сергеевна
+* Попов Григорий Павлович
+* Пронкина Александра Георгиевна
 <!-- GETTING STARTED -->
-## Getting Started
+## Немного о начале разработки
+Перед началом разработки проекта были выдвинуты требования (бэклог), которым он должен обязательно удовлетворять:
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+1. Приложение должно полностью имитировать основную работу реального бонковского приложения;
+2. Главный экран приложения должен содержать основную информацию о счетах, а также инструменты для совершения пользователем дальнейших действий;
+3. Необходимо предусмотреть возможность смены пароля учетной записи пользователя в целях обеспечения безопасности;
+4. Названия кнопок, иконок и полей должны соответствовать тому, что происходит в процессе взаимодействия пользователя и системы;
+5. Дизайн - нейтральный.
+
+Как и в любом процессе разработки программного продукта, в процессе разработки данного приложения была предусмотрена воззможность вносить правки в бэклог прямо "на ходу", т.к. во время работы приходят новые идеи, меняются мнения относительно реализации определенных программных модулей и функционала в целом.
+
 
 ### Prerequisites
 
