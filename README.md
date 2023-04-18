@@ -43,4 +43,10 @@ dependencies {
 
 ## Запуск
 1. Клонировать репозторий:
-    git 
+  ```sh
+  git clone https://github.com/dorallodee/Finale.git
+  ```
+2. Запустить проект:
+  ```sh
+  cd Finale
+  ```
