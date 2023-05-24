@@ -11,6 +11,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/rubik"
         android:paddingLeft="50dp"
-        android:text=""></TextView>
+        android:text="" />
 
 </LinearLayout>
