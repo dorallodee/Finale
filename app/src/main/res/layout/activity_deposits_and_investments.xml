@@ -30,14 +30,17 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="270dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="40dp"
                 android:src="@drawable/money_vklad" />
 
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="300dp"
-                android:layout_height="160dp"
-                app:srcCompat="@drawable/my_vklad" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/rubik"
+                android:text="Мои вклады и акции" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>

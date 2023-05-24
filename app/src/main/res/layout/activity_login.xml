@@ -25,6 +25,7 @@
         android:layout_height="55dp"
         android:background="@drawable/user"
         android:ems="10"
+        android:fontFamily="@font/rubik"
         android:gravity="center"
         android:hint="@string/login"
         android:importantForAutofill="no"
@@ -42,19 +43,20 @@
         android:id="@+id/Password"
         android:layout_width="325dp"
         android:layout_height="55dp"
+        android:autofillHints=""
+        android:background="@drawable/password"
         android:ems="10"
+        android:fontFamily="@font/rubik"
+        android:gravity="center"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:gravity="center"
-        android:background="@drawable/password"
         android:textColorHint="@color/tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.588" />
 
     <ImageView
         android:id="@+id/imageView3"

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lable"
+    style="bold"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="10dp"
-    android:textSize="16dp"
     android:background="@drawable/background_list"
-    style="bold">
-</TextView>
+    android:fontFamily="@font/rubik"
+    android:padding="10dp"
+    android:textSize="16dp"></TextView>
