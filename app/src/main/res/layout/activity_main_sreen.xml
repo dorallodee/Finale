@@ -71,47 +71,47 @@
 
     <Button
         android:id="@+id/securityText"
-        android:layout_width="284dp"
-        android:layout_height="40dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:background="@drawable/safety"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.78"
         tools:ignore="TouchTargetSizeCheck" />
 
 
     <Button
         android:id="@+id/loansText"
-        android:layout_width="284dp"
-        android:layout_height="40dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:background="@drawable/credits"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.92"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/depositsAndInvestmentsText"
-        android:layout_width="284dp"
-        android:layout_height="40dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:background="@drawable/vklad"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.85"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
@@ -157,7 +157,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.493" />
+        app:layout_constraintVertical_bias="0.486" />
 
     <TextView
         android:id="@+id/card1"
@@ -172,7 +172,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
+        app:layout_constraintVertical_bias="0.407" />
 
     <TextView
         android:id="@+id/balance1"
@@ -243,7 +243,7 @@
         app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16"
+        app:layout_constraintVertical_bias="0.168"
         app:srcCompat="@drawable/mini_icon"
         tools:ignore="ContentDescription" />
 
@@ -251,7 +251,6 @@
         android:id="@+id/tvWeather"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="4dp"
         android:gravity="center"
         android:shadowColor="@color/black"
         android:shadowDx="1"
@@ -260,16 +259,14 @@
         android:text="7"
         android:textColor="@color/white"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.795"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintBottom_toBottomOf="@id/ivWeather"
+        app:layout_constraintEnd_toEndOf="@id/ivWeather"
+        app:layout_constraintStart_toStartOf="@id/ivWeather"
+        app:layout_constraintTop_toTopOf="@id/ivWeather" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
+        android:layout_width="130dp"
         android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -289,11 +286,11 @@
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <TextView
         android:id="@+id/_name"
-        android:layout_width="123dp"
+        android:layout_width="110dp"
         android:layout_height="43dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="5dp"

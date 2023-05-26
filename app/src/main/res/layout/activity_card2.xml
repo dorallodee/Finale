@@ -13,16 +13,17 @@
         android:layout_height="60dp"
         android:background="@drawable/button_diamond"
         android:fontFamily="@font/rubik"
+        android:textColor="#000000"
         android:gravity="center"
         android:text="223 332 ₽"
         android:textAlignment="center"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintVertical_bias="0.4" />
 
     <TextView
         android:id="@+id/cardNum"
@@ -30,7 +31,8 @@
         android:layout_height="40dp"
         android:background="@drawable/button_perevod"
         android:fontFamily="@font/rubik"
-        android:paddingLeft="15dp"
+        android:gravity="center"
+        android:textColor="#000000"
         android:text="1111 2222 3333 4444"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
         android:id="@+id/fullName"
@@ -47,6 +49,7 @@
         android:background="@drawable/button_diamond"
         android:fontFamily="@font/rubik"
         android:gravity="center"
+        android:textColor="#000000"
         android:text="Попов Григорий Павлович"
         android:textAlignment="center"
         android:textSize="22sp"
@@ -55,45 +58,18 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <Button
         android:id="@+id/transfer"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/button_sqrt"
-        android:text="Перевод"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <Button
-        android:id="@+id/info"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:background="@drawable/button_perevod_light"
-        android:text="Информация"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="@drawable/perevod"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.7" />
-
-    <Button
-        android:id="@+id/topUp"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/button_sqrt"
-        android:text="Пополнение"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

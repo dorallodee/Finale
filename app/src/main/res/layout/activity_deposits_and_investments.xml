@@ -27,15 +27,6 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
-            <pl.droidsonroids.gif.GifImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="280dp"
-                android:layout_marginTop="50dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/nice_duck"
-                tools:ignore="SpeakableTextPresentCheck" />
-
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"

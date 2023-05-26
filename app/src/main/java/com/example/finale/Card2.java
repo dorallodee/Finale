@@ -31,8 +31,6 @@ public class Card2 extends AppCompatActivity {
         tvBalance = findViewById(R.id.balance);
 
         transfer = findViewById(R.id.transfer);
-        topUp = findViewById(R.id.topUp);
-        info = findViewById(R.id.info);
 
 
         Bundle arguments = getIntent().getExtras();

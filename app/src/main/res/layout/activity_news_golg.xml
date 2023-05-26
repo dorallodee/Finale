@@ -36,16 +36,6 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="70dp"
                     app:srcCompat="@drawable/chto_2" />
-
-
-                <pl.droidsonroids.gif.GifImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="60dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/nice_duck"
-                    tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <androidx.appcompat.widget.Toolbar
