@@ -19,9 +19,9 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="#BBDF91"
+            android:background="#9939DC62"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
+            app:contentScrim="#E6F7E3"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
@@ -31,20 +31,13 @@
 
                 <ImageView
                     android:id="@+id/imageView11"
-                    android:layout_width="205dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="70dp"
-                    app:srcCompat="@drawable/chto_2" />
-            </LinearLayout>
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_anchor="@+id/app_bar2"
+                    app:layout_anchorGravity="center"
+                    app:srcCompat="@drawable/chto" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="#6B9A4A"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen.PopupOverlay" />
+            </LinearLayout>
 
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

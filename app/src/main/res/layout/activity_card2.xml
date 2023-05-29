@@ -62,8 +62,8 @@
 
     <Button
         android:id="@+id/transfer"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:background="@drawable/perevod"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

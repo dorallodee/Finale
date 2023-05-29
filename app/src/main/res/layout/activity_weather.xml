@@ -11,7 +11,7 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="170dp"
         android:scaleX="1.05"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,7 +63,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintHorizontal_bias="1.02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.458" />
@@ -307,7 +307,7 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintHorizontal_bias="1.02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.507" />
@@ -462,7 +462,7 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintHorizontal_bias="1.02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.54" />
@@ -604,7 +604,7 @@
         android:fontFamily="@font/rubik"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/icon2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="1."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.41" />
@@ -674,7 +674,7 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintHorizontal_bias="1.02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.411" />
@@ -714,7 +714,7 @@
         android:layout_height="30dp"
         android:layout_below="@id/button"
         android:layout_marginHorizontal="20sp"
-        android:layout_marginStart="27dp"
+        android:layout_marginStart="28dp"
         android:fontFamily="@font/rubik"
         android:gravity="start"
         android:shadowColor="@color/black"
@@ -730,7 +730,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
+        app:layout_constraintVertical_bias="0.14" />
 
     <TextView
         android:id="@+id/minMax"
@@ -738,7 +738,7 @@
         android:layout_height="25dp"
         android:layout_below="@id/button"
         android:layout_marginHorizontal="20sp"
-        android:layout_marginStart="27dp"
+        android:layout_marginStart="28dp"
         android:fontFamily="@font/rubik"
         android:gravity="start"
         android:shadowColor="@color/black"
@@ -748,20 +748,20 @@
         android:text="мин. 3, макс. 12"
         android:textAlignment="gravity"
         android:textColor="@color/textColorForWeather"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintVertical_bias="0.18" />
 
     <TextView
         android:id="@+id/tvInfo"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        android:layout_width="203dp"
+        android:layout_height="183dp"
         android:layout_marginHorizontal="50sp"
-        android:layout_marginEnd="13dp"
+        android:layout_marginEnd="5dp"
         android:fontFamily="@font/rubik"
         android:gravity="start"
         android:shadowColor="@color/black"
@@ -769,20 +769,20 @@
         android:shadowDy="1"
         android:shadowRadius="2"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintVertical_bias="0.172" />
 
     <TextView
         android:id="@+id/tvTemp"
         android:layout_width="135dp"
         android:layout_height="100dp"
         android:layout_marginHorizontal="50sp"
-        android:layout_marginStart="27dp"
+        android:layout_marginStart="28dp"
         android:fontFamily="@font/rubik"
         android:gravity="center"
         android:shadowColor="@color/black"
@@ -797,7 +797,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221" />
+        app:layout_constraintVertical_bias="0.24" />
 
     <Button
         android:id="@+id/button"

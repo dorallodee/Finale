@@ -11,7 +11,8 @@
     <TextView
         android:id="@+id/textinnews"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/chto"
         android:fontFamily="@font/rubik"
         android:textAlignment="center"

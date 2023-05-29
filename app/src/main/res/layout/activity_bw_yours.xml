@@ -21,6 +21,7 @@
         app:layout_constraintVertical_bias="0.967" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/balance1"
         android:layout_width="226dp"
         android:layout_height="30dp"
@@ -36,6 +37,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/cardNum1"
         android:layout_width="150dp"
         android:layout_height="25dp"
@@ -50,6 +52,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/cardNum2"
         android:layout_width="150dp"
         android:layout_height="25dp"
@@ -64,6 +67,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/from"
         android:layout_width="100dp"
         android:layout_height="20dp"
@@ -78,6 +82,7 @@
         app:layout_constraintVertical_bias="0.099" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/from2"
         android:layout_width="100dp"
         android:layout_height="20dp"
@@ -92,6 +97,7 @@
         app:layout_constraintVertical_bias="0.113" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/balance2"
         android:layout_width="226dp"
         android:layout_height="30dp"
@@ -188,6 +194,7 @@
         app:layout_constraintVertical_bias="0.248" />
 
     <ExpandableListView
+        android:textColor="#000000"
         android:id="@+id/elvMobile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

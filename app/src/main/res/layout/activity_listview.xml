@@ -8,4 +8,5 @@
     android:background="@drawable/background_list"
     android:fontFamily="@font/rubik"
     android:padding="10dp"
+    android:textColor="#000000"
     android:textSize="16dp"></TextView>

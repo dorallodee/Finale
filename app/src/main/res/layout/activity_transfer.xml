@@ -39,6 +39,7 @@
         app:layout_constraintVertical_bias="0.79" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,6 +55,7 @@
         app:layout_constraintVertical_bias="0.414" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/cardNum"
         android:layout_width="150dp"
         android:layout_height="25dp"
@@ -69,6 +71,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/balance"
         android:layout_width="226dp"
         android:layout_height="30dp"
@@ -85,6 +88,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/from"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
@@ -100,6 +104,7 @@
         app:layout_constraintVertical_bias="0.208" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/howMuch"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
@@ -114,6 +119,7 @@
         app:layout_constraintVertical_bias="0.531" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/balance4"
         android:layout_width="30dp"
         android:layout_height="50dp"
@@ -131,6 +137,7 @@
         app:layout_constraintVertical_bias="0.608" />
 
     <EditText
+        android:textColor="#000000"
         android:id="@+id/money"
         android:layout_width="228dp"
         android:layout_height="50dp"
@@ -147,6 +154,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
+        android:textColor="#000000"
         android:id="@+id/number"
         android:layout_width="310dp"
         android:layout_height="50dp"
@@ -163,6 +171,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/payFor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

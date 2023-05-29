@@ -14,6 +14,7 @@
         android:layout_height="60dp"
         android:background="@drawable/button_perevod_light"
         android:text="Сменить"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -22,6 +23,7 @@
         app:layout_constraintVertical_bias="0.967" />
 
     <EditText
+        android:textColor="#000000"
         android:id="@+id/oldPassword"
         android:layout_width="325dp"
         android:layout_height="55dp"
@@ -39,6 +41,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:textColor="#000000"
         android:id="@+id/newPassword"
         android:layout_width="325dp"
         android:layout_height="55dp"
@@ -63,6 +66,7 @@
         android:fontFamily="@font/rubik"
         android:text="Попов Григорий Павлович"
         android:textSize="28sp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.387"
@@ -77,6 +81,7 @@
         android:fontFamily="@font/rubik"
         android:text="Сменить пароль"
         android:textSize="28sp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.387"
@@ -85,6 +90,7 @@
         app:layout_constraintVertical_bias="0.332" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/labelNewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,6 +105,7 @@
         app:layout_constraintVertical_bias="0.444" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/labelOldPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

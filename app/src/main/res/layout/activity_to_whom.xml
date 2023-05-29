@@ -57,6 +57,7 @@
         app:layout_constraintVertical_bias="0.797" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/labelTransfer"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
@@ -71,6 +72,7 @@
         app:layout_constraintVertical_bias="0.063" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/cardNum1"
         android:layout_width="150dp"
         android:layout_height="25dp"
@@ -85,6 +87,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/cardNum2"
         android:layout_width="150dp"
         android:layout_height="25dp"
@@ -100,6 +103,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/from"
         android:layout_width="100dp"
         android:layout_height="20dp"
@@ -115,6 +119,7 @@
         app:layout_constraintVertical_bias="0.256" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/to"
         android:layout_width="100dp"
         android:layout_height="20dp"
@@ -128,9 +133,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.407" />
 
-    [
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/from3"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
@@ -146,10 +151,11 @@
         app:layout_constraintVertical_bias="0.551" />
 
     <EditText
+        android:textColor="#000000"
         android:id="@+id/money"
         android:layout_width="228dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="352dp"
+        android:layout_marginBottom="35dp"
         android:ems="10"
         android:fontFamily="@font/rubik"
         android:inputType="numberDecimal"
@@ -162,6 +168,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/balance3"
         android:layout_width="30dp"
         android:layout_height="50dp"
@@ -178,6 +185,7 @@
         app:layout_constraintVertical_bias="0.248" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/balance1"
         android:layout_width="226dp"
         android:layout_height="30dp"

@@ -25,6 +25,7 @@
         android:layout_height="55dp"
         android:background="@drawable/user"
         android:ems="10"
+        android:textColor="#000000"
         android:fontFamily="@font/rubik"
         android:gravity="center"
         android:hint="@string/login"
@@ -40,6 +41,7 @@
         app:layout_constraintVertical_bias="0.478" />
 
     <EditText
+        android:textColor="#000000"
         android:id="@+id/Password"
         android:layout_width="325dp"
         android:layout_height="55dp"
